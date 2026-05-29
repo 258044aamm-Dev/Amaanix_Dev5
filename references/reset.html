@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password - AMAANIX</title>
+    <link rel="stylesheet" href="styles-reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+<body>
+    <main class="auth-wrapper">
+        <section class="auth-container">
+            <header class="auth-header">
+                <a href="index.html" class="auth-header__logo">AMAANIX</a>
+                <h1 class="auth-header__title">Create New Password</h1>
+                <p class="auth-header__subtitle">Enter your new password below to reset your account access.</p>
+            </header>
+
+            <a href="forgot.html" class="auth-container__back-link">
+                <i class="ph ph-arrow-left"></i>
+                Back to Forgot Password
+            </a>
+
+            <div class="auth-container__success-message" id="reset-success" hidden>
+                <i class="ph ph-check-circle"></i>
+                <span>Password reset successfully! Redirecting to login...</span>
+            </div>
+
+            <form id="reset-form" class="auth-form" novalidate>
+                <!-- New Password -->
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="new-password">New Password<span class="auth-form__required-star">*</span></label>
+                    <div class="auth-form__password-group">
+                        <input type="password" class="auth-form__input auth-form__input--password" id="new-password" placeholder="••••••••" required minlength="8" autocomplete="new-password" aria-describedby="new-password-error password-requirements">
+                        <button type="button" class="auth-form__toggle-btn" data-toggle-password="new-password" aria-label="Toggle password visibility">
+                            <i class="ph ph-eye"></i>
+                        </button>
+                    </div>
+                    <div class="auth-form__error-message" id="new-password-error" role="alert"></div>
+                    
+                    <!-- Password Requirements -->
+                    <ul class="auth-form__requirements" id="password-requirements" aria-live="polite">
+                        <li class="auth-form__requirement auth-form__requirement--unmet" id="req-length">8+ characters</li>
+                        <li class="auth-form__requirement auth-form__requirement--unmet" id="req-number">1 number</li>
+                        <li class="auth-form__requirement auth-form__requirement--unmet" id="req-special">1 special character</li>
+                    </ul>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="confirm-password">Confirm Password<span class="auth-form__required-star">*</span></label>
+                    <div class="auth-form__password-group">
+                        <input type="password" class="auth-form__input auth-form__input--password" id="confirm-password" placeholder="••••••••" required autocomplete="new-password" aria-describedby="confirm-password-error">
+                        <button type="button" class="auth-form__toggle-btn" data-toggle-password="confirm-password" aria-label="Toggle password visibility">
+                            <i class="ph ph-eye"></i>
+                        </button>
+                    </div>
+                    <div class="auth-form__error-message" id="confirm-password-error" role="alert"></div>
+                </div>
+
+                <button type="submit" class="auth-form__submit btn btn--primary">Reset Password</button>
+            </form>
+
+            <footer class="auth-footer">
+                <a href="auth.html" class="auth-footer__link">Back to Login</a>
+            </footer>
+        </section>
+    </main>
+    <script src="script-reset.js" defer></script>
+</body>
+</html>

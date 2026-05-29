@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - AMAANIX</title>
+    <link rel="stylesheet" href="styles-forgot.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+<body>
+    <main class="auth-wrapper">
+        <section class="auth-container">
+            <header class="auth-header">
+                <a href="index.html" class="auth-header__logo">AMAANIX</a>
+                <h1 class="auth-header__title">Forgot your password?</h1>
+                <p class="auth-header__subtitle">Enter your email and we'll send you a link to reset your password.</p>
+            </header>
+
+            <a href="auth.html" class="auth-container__back-link">
+                <i class="ph ph-arrow-left"></i>
+                Back to Login
+            </a>
+
+            <div class="auth-container__success-message" id="successMessage" hidden>
+                <i class="ph ph-check-circle"></i>
+                <span id="successText">If an account exists with this email, you'll receive a password reset link shortly.</span>
+            </div>
+
+            <form id="forgot-password-form" class="auth-form" novalidate>
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="reset-email">Email Address<span class="auth-form__required-star">*</span></label>
+                    <input type="email" class="auth-form__input" id="reset-email" placeholder="you@example.com" required autocomplete="email" aria-describedby="reset-email-error">
+                    <div class="auth-form__error-message" id="reset-email-error" role="alert"></div>
+                </div>
+                <button type="submit" class="auth-form__submit btn btn--primary">Send Reset Link</button>
+            </form>
+
+            <footer class="auth-footer">
+                <span class="auth-footer__text">Remember your password? </span>
+                <a href="auth.html" class="auth-footer__link">Sign in instead</a>
+            </footer>
+        </section>
+    </main>
+    <script src="script-forgot.js" defer></script>
+</body>
+</html>
