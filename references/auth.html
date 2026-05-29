@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-auth.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMAANIX — Login & Register</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Proza+Libre:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
+</head>
+<body>
+    <main class="auth-wrapper" role="main">
+        <div class="auth-container">
+            <a href="index.html" class="back-link">
+                <i class="ph ph-arrow-left"></i>
+                Back to Home
+            </a>
+            <header class="auth-header">
+                <a href="index.html" class="logo">AMAANIX</a>
+                <p>Welcome back! Please sign in to continue.</p>
+            </header>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-target="login-form">Login</div>
+                <div class="auth-tab" data-target="register-form">Register</div>
+            </div>
+
+            <!-- Login Form -->
+            <section class="auth-form__section" aria-labelledby="login-heading">
+            <form class="auth-form active" id="login-form" role="form">
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email Address<span class="required-star">*</span></label>
+                    <input type="email" class="form-input" id="login-email" placeholder="you@example.com" required autocomplete="email">
+                    <div class="error-message" id="login-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Password<span class="required-star">*</span></label>
+                    <div class="password-input-wrapper">
+                        <input type="password" class="form-input" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+                        <span class="password-toggle" aria-label="Toggle password visibility">
+                            <i class="ph ph-eye"></i>
+                        </span>
+                    </div>
+                    <div class="error-message" id="login-password-error"></div>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="forgot.html" class="forgot-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary auth-submit">Sign In</button>
+            </form>
+
+                        </section>
+            <!-- Register Form -->
+            <section class="auth-form__section" aria-labelledby="register-heading">
+            <form class="auth-form" id="register-form" role="form">
+                <div class="form-group">
+                    <label class="form-label" for="register-name">Full Name<span class="required-star">*</span></label>
+                    <input type="text" class="form-input" id="register-name" placeholder="John Doe" required autocomplete="name">
+                    <div class="error-message" id="register-name-error"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="register-email">Email Address<span class="required-star">*</span></label>
+                    <input type="email" class="form-input" id="register-email" placeholder="you@example.com" required autocomplete="email">
+                    <div class="error-message" id="register-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="register-password">Password<span class="required-star">*</span></label>
+                    <div class="password-input-wrapper">
+                        <input type="password" class="form-input" id="register-password" placeholder="••••••••" required minlength="8" autocomplete="new-password">
+                        <span class="password-toggle" aria-label="Toggle password visibility">
+                            <i class="ph ph-eye"></i>
+                        </span>
+                    </div>
+                    <div class="error-message" id="password-error"></div>
+                    <div class="strength-bar" id="strength-bar"></div>
+                    <div class="strength-label" id="strength-label"></div>
+                    <ul class="password-requirements" id="password-requirements">
+                        <li id="req-length" class="requirement">✓ 8+ characters</li>
+                        <li id="req-number" class="requirement">✓ 1 number</li>
+                        <li id="req-special" class="requirement">✓ 1 special character</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="register-confirm">Confirm Password<span class="required-star">*</span></label>
+                    <div class="password-input-wrapper">
+                        <input type="password" class="form-input" id="register-confirm" placeholder="••••••••" required autocomplete="new-password">
+                        <span class="password-toggle" aria-label="Toggle password visibility">
+                            <i class="ph ph-eye"></i>
+                        </span>
+                    </div>
+                    <div class="error-message" id="register-confirm-error"></div>
+                </div>
+                <button type="submit" class="btn btn-primary auth-submit">Create Account</button>
+            </form>
+
+                        </section>
+            <div class="auth-divider">or continue with</div>
+
+            <div class="social-login">
+                <a href="#" class="social-btn" title="Google"><i class="fab fa-google"></i></a>
+                <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn" title="Apple"><i class="fab fa-apple"></i></a>
+            </div>
+
+            <div class="auth-footer">
+                <span>By continuing, you agree to our </span>
+                <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </main>
+    <script src="script-auth.js" defer></script>
+  <footer class="auth-page__footer">
+    <p>&copy; 2026 Amaanix. All rights reserved.</p>
+  </footer>
+</body>
+</html>
