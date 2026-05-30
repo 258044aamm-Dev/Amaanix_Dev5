@@ -91,7 +91,7 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Most Loved Collections",
+        "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
