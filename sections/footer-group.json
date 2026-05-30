@@ -31,7 +31,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Support",
-            "menu": "footer"
+            "menu": "footer-menu"
           }
         }
       },
