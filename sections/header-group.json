@@ -17,15 +17,15 @@
         "announcement_A3VDrH": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "🚚 Free Shipping on Orders $100+",
+            "link": "#"
           }
         },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "🎁 10% Welcome Discount",
+            "link": "#"
           }
         }
       },
@@ -38,7 +38,7 @@
         "change_slides_speed": 5,
         "show_navigation_arrows": false,
         "underline_text": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-4",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
