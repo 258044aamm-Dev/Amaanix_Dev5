@@ -448,6 +448,12 @@
         "change_slides_speed": {
           "label": "Change every"
         },
+        "show_navigation_arrows": {
+          "label": "Show navigation arrows"
+        },
+        "underline_text": {
+          "label": "Underline announcement text"
+        },
         "heading_utilities": {
          "content": "Utilities"
         },

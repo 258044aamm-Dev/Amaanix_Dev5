@@ -2192,6 +2192,10 @@ input[type='checkbox'] {
   box-shadow: 0 0 0 -0.2rem rgb(var(--color-foreground));
 }
 
+.announcement-bar .slider-button--hidden {
+  display: none;
+}
+
 .localization-wrapper {
   grid-area: language-currency;
   align-self: center;
@@ -2250,6 +2254,10 @@ input[type='checkbox'] {
   margin: 0;
   letter-spacing: 0.1rem;
   min-height: 3.8rem;
+}
+
+.announcement-bar__message--underlined span {
+  text-decoration: underline;
 }
 
 .announcement-bar-slider--fade-in-next .announcement-bar__message,
