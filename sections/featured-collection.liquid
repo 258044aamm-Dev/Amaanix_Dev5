@@ -36,6 +36,45 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #collection-{{ section.id }} .card__media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity var(--duration-medium) ease;
+    z-index: 2;
+    pointer-events: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+  }
+
+  #collection-{{ section.id }} .card__media-overlay-text {
+    font-size: calc(var(--font-heading-scale) * 1.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  #collection-{{ section.id }} .card__media-overlay-cta {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+  }
+
+  @media screen and (min-width: 990px) and (hover: hover) {
+    #collection-{{ section.id }} .card-wrapper:hover .card__media-overlay {
+      opacity: 1;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -123,6 +162,7 @@
                   image_shape: section.settings.image_shape,
                   lazy_load: lazy_load,
                   show_secondary_image: section.settings.show_secondary_image,
+                  show_overlay_on_hover: section.settings.show_overlay_on_hover,
                   show_vendor: section.settings.show_vendor,
                   show_rating: section.settings.show_rating,
                   skip_styles: skip_card_product_styles,
@@ -157,6 +197,7 @@
                 media_aspect_ratio: section.settings.image_ratio,
                 image_shape: section.settings.image_shape,
                 lazy_load: false,
+                show_overlay_on_hover: section.settings.show_overlay_on_hover,
                 placeholder_image: placeholder_image
               %}
             </li>
@@ -434,6 +475,12 @@
       "id": "show_secondary_image",
       "default": false,
       "label": "t:sections.featured-collection.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay_on_hover",
+      "default": false,
+      "label": "Show product overlay on hover"
     },
     {
       "type": "checkbox",

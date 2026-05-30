@@ -616,6 +616,22 @@
         "unit": "px",
         "label": "t:settings_schema.global.settings.blur.label",
         "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Card element visibility"
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_title",
+        "default": true,
+        "label": "Show product title"
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_price",
+        "default": true,
+        "label": "Show product price"
       }
     ]
   },
