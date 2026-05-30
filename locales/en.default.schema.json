@@ -471,6 +471,21 @@
         "enable_language_selector": {
           "label": "Language selector",
           "info": "[Manage languages](/admin/settings/languages)"
+        },
+        "heading_font": {
+          "label": "Heading font"
+        },
+        "heading_weight": {
+          "label": "Heading font weight"
+        },
+        "heading_size_scale": {
+          "label": "Heading size scale"
+        },
+        "heading_text_transform": {
+          "label": "Heading text transform"
+        },
+        "heading_letter_spacing": {
+          "label": "Heading letter spacing"
         }
       },
       "blocks": {
@@ -1415,6 +1430,33 @@
             "label": "Right"
           },
           "label": "Mobile alignment"
+        },
+        "heading_font": {
+          "label": "Heading font"
+        },
+        "heading_weight": {
+          "label": "Heading font weight"
+        },
+        "heading_size_scale": {
+          "label": "Heading size scale"
+        },
+        "heading_text_transform": {
+          "label": "Heading text transform"
+        },
+        "heading_letter_spacing": {
+          "label": "Heading letter spacing"
+        },
+        "body_font": {
+          "label": "Body font"
+        },
+        "body_weight": {
+          "label": "Body font weight"
+        },
+        "body_size_scale": {
+          "label": "Body size scale"
+        },
+        "body_line_height": {
+          "label": "Body line height"
         }
       },
       "blocks": {
@@ -2561,6 +2603,33 @@
         },
         "swipe_on_mobile": {
           "label": "Carousel"
+        },
+        "heading_font": {
+          "label": "Heading font"
+        },
+        "heading_weight": {
+          "label": "Heading font weight"
+        },
+        "heading_size_scale": {
+          "label": "Heading size scale"
+        },
+        "heading_text_transform": {
+          "label": "Heading text transform"
+        },
+        "heading_letter_spacing": {
+          "label": "Heading letter spacing"
+        },
+        "body_font": {
+          "label": "Body font"
+        },
+        "body_weight": {
+          "label": "Body font weight"
+        },
+        "body_size_scale": {
+          "label": "Body size scale"
+        },
+        "body_line_height": {
+          "label": "Body line height"
         }
       },
       "blocks": {
@@ -2600,6 +2669,33 @@
         },
         "paragraph": {
           "content": "Signups add [customer profiles](https://help.shopify.com/manual/customers/manage-customers)"
+        },
+        "heading_font": {
+          "label": "Heading font"
+        },
+        "heading_weight": {
+          "label": "Heading font weight"
+        },
+        "heading_size_scale": {
+          "label": "Heading size scale"
+        },
+        "heading_text_transform": {
+          "label": "Heading text transform"
+        },
+        "heading_letter_spacing": {
+          "label": "Heading letter spacing"
+        },
+        "body_font": {
+          "label": "Body font"
+        },
+        "body_weight": {
+          "label": "Body font weight"
+        },
+        "body_size_scale": {
+          "label": "Body size scale"
+        },
+        "body_line_height": {
+          "label": "Body line height"
         }
       },
       "blocks": {
@@ -2874,6 +2970,33 @@
         },
         "full_width": {
           "label": "Full width"
+        },
+        "heading_font": {
+          "label": "Heading font"
+        },
+        "heading_weight": {
+          "label": "Heading font weight"
+        },
+        "heading_size_scale": {
+          "label": "Heading size scale"
+        },
+        "heading_text_transform": {
+          "label": "Heading text transform"
+        },
+        "heading_letter_spacing": {
+          "label": "Heading letter spacing"
+        },
+        "body_font": {
+          "label": "Body font"
+        },
+        "body_weight": {
+          "label": "Body font weight"
+        },
+        "body_size_scale": {
+          "label": "Body size scale"
+        },
+        "body_line_height": {
+          "label": "Body line height"
         }
       },
       "blocks": {

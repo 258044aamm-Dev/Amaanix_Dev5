@@ -14,6 +14,77 @@
   }
 {%- endstyle -%}
 
+{%- style -%}
+  {%- liquid
+    assign heading_scale = settings.heading_scale | times: 1.0 | divided_by: settings.body_scale
+    assign section_heading_scale = heading_scale | times: section.settings.heading_size_scale | divided_by: 100.0
+    assign body_scale = settings.body_scale | divided_by: 100.0
+    assign section_body_scale = body_scale | times: section.settings.body_size_scale | divided_by: 100.0
+  -%}
+
+  #shopify-section-{{ section.id }} {
+    {%- if section.settings.heading_font != blank -%}
+      --font-heading-family: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
+      --font-heading-style: {{ section.settings.heading_font.style }};
+    {%- endif -%}
+    {%- if section.settings.heading_weight != blank -%}
+      --font-heading-weight: {{ section.settings.heading_weight }};
+    {%- endif -%}
+    --font-heading-scale: {{ section_heading_scale }};
+    {%- if section.settings.body_font != blank -%}
+      --font-body-family: {{ section.settings.body_font.family }}, {{ section.settings.body_font.fallback_families }};
+      --font-body-style: {{ section.settings.body_font.style }};
+    {%- endif -%}
+    {%- if section.settings.body_weight != blank -%}
+      --font-body-weight: {{ section.settings.body_weight }};
+    {%- endif -%}
+    --font-body-scale: {{ section_body_scale }};
+  }
+
+  {%- if section.settings.heading_text_transform != blank -%}
+    #shopify-section-{{ section.id }} h1,
+    #shopify-section-{{ section.id }} h2,
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4,
+    #shopify-section-{{ section.id }} h5,
+    #shopify-section-{{ section.id }} .h0,
+    #shopify-section-{{ section.id }} .h1,
+    #shopify-section-{{ section.id }} .h2,
+    #shopify-section-{{ section.id }} .h3,
+    #shopify-section-{{ section.id }} .h4,
+    #shopify-section-{{ section.id }} .h5,
+    #shopify-section-{{ section.id }} .hxl,
+    #shopify-section-{{ section.id }} .hxxl {
+      text-transform: {{ section.settings.heading_text_transform }};
+    }
+  {%- endif -%}
+
+  {%- if section.settings.heading_letter_spacing > 0 -%}
+    #shopify-section-{{ section.id }} h1,
+    #shopify-section-{{ section.id }} h2,
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4,
+    #shopify-section-{{ section.id }} h5,
+    #shopify-section-{{ section.id }} .h0,
+    #shopify-section-{{ section.id }} .h1,
+    #shopify-section-{{ section.id }} .h2,
+    #shopify-section-{{ section.id }} .h3,
+    #shopify-section-{{ section.id }} .h4,
+    #shopify-section-{{ section.id }} .h5,
+    #shopify-section-{{ section.id }} .hxl,
+    #shopify-section-{{ section.id }} .hxxl {
+      letter-spacing: {{ section.settings.heading_letter_spacing }}em;
+    }
+  {%- endif -%}
+
+  {%- if section.settings.body_line_height > 0 -%}
+    #shopify-section-{{ section.id }} .rte,
+    #shopify-section-{{ section.id }} .text-body {
+      line-height: {{ section.settings.body_line_height }};
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
   <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
@@ -178,6 +249,165 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Heading typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "default": "assistant_n4",
+      "label": "t:sections.rich-text.settings.heading_font.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        }
+      ],
+      "default": "",
+      "label": "t:sections.rich-text.settings.heading_weight.label"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_scale",
+      "min": 80,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "label": "t:sections.rich-text.settings.heading_size_scale.label",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "heading_text_transform",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "",
+      "label": "t:sections.rich-text.settings.heading_text_transform.label"
+    },
+    {
+      "type": "range",
+      "id": "heading_letter_spacing",
+      "min": 0,
+      "max": 0.3,
+      "step": 0.1,
+      "unit": "em",
+      "label": "t:sections.rich-text.settings.heading_letter_spacing.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Body typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "default": "assistant_n4",
+      "label": "t:sections.rich-text.settings.body_font.label"
+    },
+    {
+      "type": "select",
+      "id": "body_weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        }
+      ],
+      "default": "",
+      "label": "t:sections.rich-text.settings.body_weight.label"
+    },
+    {
+      "type": "range",
+      "id": "body_size_scale",
+      "min": 80,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "label": "t:sections.rich-text.settings.body_size_scale.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "body_line_height",
+      "min": 0,
+      "max": 2.0,
+      "step": 0.1,
+      "label": "t:sections.rich-text.settings.body_line_height.label",
+      "default": 0
     }
   ],
   "blocks": [
