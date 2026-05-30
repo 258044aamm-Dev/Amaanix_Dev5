@@ -9,6 +9,10 @@ on:
   schedule:
   - cron: '38 16 * * *'
 
+permissions:
+  issues: write # Required to post comments on issues
+  pull-requests: write # Required to post comments on PRs
+
 jobs:
   stale:
 
