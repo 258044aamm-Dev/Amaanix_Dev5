@@ -110,9 +110,83 @@
       },
       {
         "type": "font_picker",
-        "id": "type_header_font",
+        "id": "type_h1_font",
         "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label"
+        "label": "t:settings_schema.typography.settings.type_h1_font.label"
+      },
+      {
+        "type": "range",
+        "id": "type_h1_scale",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.type_h1_scale.label",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_h2_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_h2_font.label"
+      },
+      {
+        "type": "range",
+        "id": "type_h2_scale",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.type_h2_scale.label",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_h3_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_h3_font.label"
+      },
+      {
+        "type": "range",
+        "id": "type_h3_scale",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.type_h3_scale.label",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_h4_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_h4_font.label"
+      },
+      {
+        "type": "range",
+        "id": "type_h4_scale",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.type_h4_scale.label",
+        "default": 100
+      },
+      {
+        "type": "font_picker",
+        "id": "type_h5_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_h5_font.label"
+      },
+      {
+        "type": "range",
+        "id": "type_h5_scale",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.type_h5_scale.label",
+        "default": 100
       },
       {
         "type": "range",

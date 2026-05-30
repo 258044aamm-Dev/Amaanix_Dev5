@@ -176,8 +176,35 @@
     "typography": {
       "name": "Typography",
       "settings": {
-        "type_header_font": {
-          "label": "Font"
+        "type_h1_font": {
+          "label": "H1 Font"
+        },
+        "type_h1_scale": {
+          "label": "H1 Scale"
+        },
+        "type_h2_font": {
+          "label": "H2 Font"
+        },
+        "type_h2_scale": {
+          "label": "H2 Scale"
+        },
+        "type_h3_font": {
+          "label": "H3 Font"
+        },
+        "type_h3_scale": {
+          "label": "H3 Scale"
+        },
+        "type_h4_font": {
+          "label": "H4 Font"
+        },
+        "type_h4_scale": {
+          "label": "H4 Scale"
+        },
+        "type_h5_font": {
+          "label": "H5 Font"
+        },
+        "type_h5_scale": {
+          "label": "H5 Scale"
         },
         "heading_scale": {
           "label": "Scale"
