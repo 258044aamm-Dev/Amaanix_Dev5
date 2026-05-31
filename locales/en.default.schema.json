@@ -261,6 +261,9 @@
         "animations_reveal_on_scroll": {
           "label": "Reveal sections on scroll"
         },
+        "animations_slide_left_fill": {
+          "label": "Slide fill color"
+        },
         "animations_hover_elements": {
           "options__1": {
             "label": "None"
@@ -270,6 +273,9 @@
           },
           "options__3": {
             "label": "3D lift"
+          },
+          "options__4": {
+            "label": "Left-to-right slide"
           },
           "label": "Hover effect",
           "info": "Affects cards and buttons"

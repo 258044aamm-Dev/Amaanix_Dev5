@@ -3542,6 +3542,28 @@ details-disclosure > details {
   }
 }
 
+/* Slide left: fills secondary buttons from left to right on hover */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .animate--hover-slide-left .button--secondary {
+    background-image: linear-gradient(
+      to right,
+      rgb(var(--color-slide-left-fill)) 50%,
+      transparent 50%
+    );
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position var(--duration-medium) var(--ease-out-slow);
+  }
+
+  .animate--hover-slide-left .button--secondary:not([disabled]):hover {
+    background-position: left;
+  }
+
+  .animate--hover-slide-left .button--secondary:not([disabled]):hover::after {
+    --border-offset: 0px;
+  }
+}
+
 /* Loading spinner */
 .loading__spinner {
   position: absolute;
