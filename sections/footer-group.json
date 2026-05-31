@@ -17,7 +17,10 @@
         "brand_information_FGqxhj": {
           "type": "brand_information",
           "settings": {
-            "show_social": true
+            "show_social": true,
+            "social_alignment": 35,
+            "social_gap": 10,
+            "social_icon_size": 24
           }
         },
         "footer-0": {
@@ -46,6 +49,9 @@
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
         "show_social": false,
+        "social_alignment": 100,
+        "social_gap": 10,
+        "social_icon_size": 22,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
