@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "logo_width": 90,
+    "logo": "shopify://shop_images/Primary_Logo.svg",
+    "logo_width": 160,
     "type_h1_font": "assistant_n4",
     "type_h1_scale": 100,
     "type_h2_font": "assistant_n4",
