@@ -2,9 +2,33 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign social_icons = true
-  if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
-    assign social_icons = false
+  assign social_icons = false
+  if settings.social_facebook_link != blank and settings.social_facebook_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_instagram_link != blank and settings.social_instagram_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_youtube_link != blank and settings.social_youtube_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_tiktok_link != blank and settings.social_tiktok_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_twitter_link != blank and settings.social_twitter_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_pinterest_link != blank and settings.social_pinterest_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_snapchat_link != blank and settings.social_snapchat_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_tumblr_link != blank and settings.social_tumblr_visible != false
+    assign social_icons = true
+  endif
+  if settings.social_vimeo_link != blank and settings.social_vimeo_visible != false
+    assign social_icons = true
   endif
   if section.settings.enable_country_selector or section.settings.enable_language_selector
     assign language_country_selector = true
@@ -23,7 +47,7 @@
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
     {%- if section.settings.show_social and social_icons -%}
-      {%- render 'social-icons' -%}
+      {%- render 'social-icons', alignment: section.settings.social_alignment | default: 100, gap: section.settings.social_gap | default: 10, icon_size: section.settings.social_icon_size | default: 22 -%}
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
       <div
@@ -227,6 +251,40 @@
       "default": false,
       "label": "t:sections.announcement-bar.settings.show_social.label",
       "info": "t:sections.announcement-bar.settings.show_social.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.social_heading.content"
+    },
+    {
+      "type": "range",
+      "id": "social_alignment",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "t:sections.announcement-bar.settings.social_alignment.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "social_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.announcement-bar.settings.social_gap.label",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "social_icon_size",
+      "min": 16,
+      "max": 44,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.announcement-bar.settings.social_icon_size.label",
+      "default": 22
     },
     {
       "type": "checkbox",

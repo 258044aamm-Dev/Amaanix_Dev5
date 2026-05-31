@@ -132,6 +132,10 @@
   gap: 1rem;
 }
 
+.footer-block--newsletter .list-social {
+  flex: 1;
+}
+
 .footer-block--newsletter:only-child {
   margin-top: 0;
 }
@@ -166,10 +170,6 @@
 .footer__follow-on-shop {
   display: flex;
   text-align: center;
-}
-
-.footer__list-social.list-social:only-child {
-  justify-content: center;
 }
 
 .footer-block__newsletter {
@@ -234,7 +234,6 @@
   .footer__follow-on-shop,
   .footer-block__newsletter {
     display: flex;
-    justify-content: center;
   }
 
   .footer-block__newsletter {
@@ -436,14 +435,6 @@
 .footer-block-image > img,
 .footer-block__brand-info > img {
   height: auto;
-}
-
-.footer-block:only-child .footer-block__brand-info .footer__list-social.list-social {
-  justify-content: center;
-}
-
-.footer-block__brand-info .footer__list-social.list-social {
-  justify-content: flex-start;
 }
 
 .footer-block__details-content .placeholder-svg {

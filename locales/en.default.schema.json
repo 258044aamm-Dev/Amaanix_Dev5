@@ -179,6 +179,18 @@
         },
         "brand_image_width": {
           "label": "Image width"
+        },
+        "social_heading": {
+          "content": "Social icons customization"
+        },
+        "social_alignment": {
+          "label": "Social icons alignment"
+        },
+        "social_gap": {
+          "label": "Social icons spacing"
+        },
+        "social_icon_size": {
+          "label": "Social icon size"
         }
       }
     },
@@ -288,41 +300,104 @@
         "header": {
           "content": "Social accounts"
         },
-        "social_twitter_link": {
-          "label": "X / Twitter",
-          "info": "https://x.com/shopify"
-        },
         "social_facebook_link": {
           "label": "Facebook",
           "info": "https://facebook.com/shopify"
         },
-        "social_pinterest_link": {
-          "label": "Pinterest",
-          "info": "https://pinterest.com/shopify"
+        "social_facebook_icon": {
+          "label": "Facebook custom icon"
+        },
+        "social_facebook_visible": {
+          "label": "Show Facebook",
+          "info": "Uncheck to hide this icon even if a URL is set"
         },
         "social_instagram_link": {
           "label": "Instagram",
           "info": "http://instagram.com/shopify"
         },
-        "social_tiktok_link": {
-          "label": "TikTok",
-          "info": "https://tiktok.com/@shopify"
+        "social_instagram_icon": {
+          "label": "Instagram custom icon"
         },
-        "social_tumblr_link": {
-          "label": "Tumblr",
-          "info": "https://shopify.tumblr.com"
-        },
-        "social_snapchat_link": {
-          "label": "Snapchat",
-          "info": "https://www.snapchat.com/add/shopify"
+        "social_instagram_visible": {
+          "label": "Show Instagram",
+          "info": "Uncheck to hide this icon even if a URL is set"
         },
         "social_youtube_link": {
           "label": "YouTube",
           "info": "https://www.youtube.com/shopify"
         },
+        "social_youtube_icon": {
+          "label": "YouTube custom icon"
+        },
+        "social_youtube_visible": {
+          "label": "Show YouTube",
+          "info": "Uncheck to hide this icon even if a URL is set"
+        },
+        "social_tiktok_link": {
+          "label": "TikTok",
+          "info": "https://tiktok.com/@shopify"
+        },
+        "social_tiktok_icon": {
+          "label": "TikTok custom icon"
+        },
+        "social_tiktok_visible": {
+          "label": "Show TikTok",
+          "info": "Uncheck to hide this icon even if a URL is set"
+        },
+        "social_twitter_link": {
+          "label": "X / Twitter",
+          "info": "https://x.com/shopify"
+        },
+        "social_twitter_icon": {
+          "label": "X / Twitter custom icon"
+        },
+        "social_twitter_visible": {
+          "label": "Show X / Twitter",
+          "info": "Uncheck to hide this icon even if a URL is set"
+        },
+        "social_snapchat_link": {
+          "label": "Snapchat",
+          "info": "https://www.snapchat.com/add/shopify"
+        },
+        "social_snapchat_icon": {
+          "label": "Snapchat custom icon"
+        },
+        "social_snapchat_visible": {
+          "label": "Show Snapchat",
+          "info": "Uncheck to hide this icon even if a URL is set"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest",
+          "info": "https://pinterest.com/shopify"
+        },
+        "social_pinterest_icon": {
+          "label": "Pinterest custom icon"
+        },
+        "social_pinterest_visible": {
+          "label": "Show Pinterest",
+          "info": "Uncheck to hide this icon even if a URL is set"
+        },
+        "social_tumblr_link": {
+          "label": "Tumblr",
+          "info": "https://shopify.tumblr.com"
+        },
+        "social_tumblr_icon": {
+          "label": "Tumblr custom icon"
+        },
+        "social_tumblr_visible": {
+          "label": "Show Tumblr",
+          "info": "Uncheck to hide this icon even if a URL is set"
+        },
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https://vimeo.com/shopify"
+        },
+        "social_vimeo_icon": {
+          "label": "Vimeo custom icon"
+        },
+        "social_vimeo_visible": {
+          "label": "Show Vimeo",
+          "info": "Uncheck to hide this icon even if a URL is set"
         }
       }
     },
@@ -505,6 +580,18 @@
         "show_social": {
           "label": "Social media icons",
           "info": "[Manage social accounts](/editor?context=theme&category=social%20media)"
+        },
+        "social_heading": {
+          "content": "Social icons customization"
+        },
+        "social_alignment": {
+          "label": "Social icons alignment"
+        },
+        "social_gap": {
+          "label": "Social icons spacing"
+        },
+        "social_icon_size": {
+          "label": "Social icon size"
         },
         "enable_country_selector": {
           "label": "Country/region selector",
@@ -1050,6 +1137,18 @@
             "show_social": {
               "label": "Social media icons",
               "info": "[Manage social accounts](/editor?context=theme&category=social%20media)"
+            },
+            "social_heading": {
+              "content": "Social icons"
+            },
+            "social_alignment": {
+              "label": "Alignment"
+            },
+            "social_gap": {
+              "label": "Icon spacing"
+            },
+            "social_icon_size": {
+              "label": "Icon size"
             }
           }
         },
@@ -1107,6 +1206,18 @@
         "enable_follow_on_shop": {
           "label": "Follow on Shop",
           "info": "Shop Pay must be enabled. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
+        },
+        "social_heading": {
+          "content": "Social icons customization"
+        },
+        "social_alignment": {
+          "label": "Social icons alignment"
+        },
+        "social_gap": {
+          "label": "Social icons spacing"
+        },
+        "social_icon_size": {
+          "label": "Social icon size"
         }
       }
     },

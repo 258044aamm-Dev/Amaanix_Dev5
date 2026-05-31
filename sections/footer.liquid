@@ -29,10 +29,38 @@
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
-    assign has_social_icons = true
-    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
-      assign has_social_icons = false
+    assign has_social_icons = false
+    if settings.social_facebook_link != blank and settings.social_facebook_visible != false
+      assign has_social_icons = true
     endif
+    if settings.social_instagram_link != blank and settings.social_instagram_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_youtube_link != blank and settings.social_youtube_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_tiktok_link != blank and settings.social_tiktok_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_twitter_link != blank and settings.social_twitter_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_pinterest_link != blank and settings.social_pinterest_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_snapchat_link != blank and settings.social_snapchat_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_tumblr_link != blank and settings.social_tumblr_visible != false
+      assign has_social_icons = true
+    endif
+    if settings.social_vimeo_link != blank and settings.social_vimeo_visible != false
+      assign has_social_icons = true
+    endif
+
+    assign social_alignment = section.settings.social_alignment | default: 100
+    assign social_gap = section.settings.social_gap | default: 10
+    assign social_icon_size = section.settings.social_icon_size | default: 22
 
     if settings.brand_image == blank and settings.brand_headline == blank and settings.brand_description == blank
       assign brand_empty = true
@@ -129,7 +157,12 @@
                         <div class="rte">{{ settings.brand_description }}</div>
                       {%- endif -%}
                       {%- if block.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons', class: 'footer__list-social' -%}
+                        {%- liquid
+                          assign block_alignment = block.settings.social_alignment | default: 0
+                          assign block_gap = block.settings.social_gap | default: 10
+                          assign block_icon_size = block.settings.social_icon_size | default: 22
+                        -%}
+                        {%- render 'social-icons', class: 'footer__list-social', alignment: block_alignment, gap: block_gap, icon_size: block_icon_size -%}
                       {%- endif -%}
                     </div>
                   {%- when 'image' -%}
@@ -243,7 +276,7 @@
           {%- endif -%}
 
           {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
+            {%- render 'social-icons', class: 'footer__list-social', alignment: social_alignment, gap: social_gap, icon_size: social_icon_size -%}
           {%- endif -%}
         </div>
       </div>
@@ -359,6 +392,40 @@
           "default": true,
           "label": "t:sections.footer.blocks.brand_information.settings.show_social.label",
           "info": "t:sections.footer.blocks.brand_information.settings.show_social.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer.blocks.brand_information.settings.social_heading.content"
+        },
+        {
+          "type": "range",
+          "id": "social_alignment",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "t:sections.footer.blocks.brand_information.settings.social_alignment.label",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "social_gap",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.footer.blocks.brand_information.settings.social_gap.label",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "social_icon_size",
+          "min": 16,
+          "max": 44,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.footer.blocks.brand_information.settings.social_icon_size.label",
+          "default": 22
         }
       ]
     },
@@ -463,6 +530,40 @@
       "default": true,
       "label": "t:sections.footer.settings.show_social.label",
       "info": "t:sections.footer.settings.show_social.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.social_heading.content"
+    },
+    {
+      "type": "range",
+      "id": "social_alignment",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "t:sections.footer.settings.social_alignment.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "social_gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.footer.settings.social_gap.label",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "social_icon_size",
+      "min": 16,
+      "max": 44,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.footer.settings.social_icon_size.label",
+      "default": 22
     },
     {
       "type": "checkbox",

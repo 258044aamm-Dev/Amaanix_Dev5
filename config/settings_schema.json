@@ -1404,10 +1404,25 @@
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header.content"
+      },
+      {
         "type": "text",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_facebook_icon",
+        "label": "t:settings_schema.social-media.settings.social_facebook_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_facebook_visible",
+        "label": "t:settings_schema.social-media.settings.social_facebook_visible.label",
+        "default": true
       },
       {
         "type": "text",
@@ -1416,10 +1431,32 @@
         "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
       },
       {
+        "type": "image_picker",
+        "id": "social_instagram_icon",
+        "label": "t:settings_schema.social-media.settings.social_instagram_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_instagram_visible",
+        "label": "t:settings_schema.social-media.settings.social_instagram_visible.label",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "social_youtube_link",
         "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_youtube_icon",
+        "label": "t:settings_schema.social-media.settings.social_youtube_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_youtube_visible",
+        "label": "t:settings_schema.social-media.settings.social_youtube_visible.label",
+        "default": true
       },
       {
         "type": "text",
@@ -1428,10 +1465,32 @@
         "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
       },
       {
+        "type": "image_picker",
+        "id": "social_tiktok_icon",
+        "label": "t:settings_schema.social-media.settings.social_tiktok_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_tiktok_visible",
+        "label": "t:settings_schema.social-media.settings.social_tiktok_visible.label",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "social_twitter_link",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_twitter_icon",
+        "label": "t:settings_schema.social-media.settings.social_twitter_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_twitter_visible",
+        "label": "t:settings_schema.social-media.settings.social_twitter_visible.label",
+        "default": true
       },
       {
         "type": "text",
@@ -1440,10 +1499,32 @@
         "placeholder": "t:settings_schema.social-media.settings.social_snapchat_link.info"
       },
       {
+        "type": "image_picker",
+        "id": "social_snapchat_icon",
+        "label": "t:settings_schema.social-media.settings.social_snapchat_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_snapchat_visible",
+        "label": "t:settings_schema.social-media.settings.social_snapchat_visible.label",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "social_pinterest_link",
         "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_pinterest_icon",
+        "label": "t:settings_schema.social-media.settings.social_pinterest_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_pinterest_visible",
+        "label": "t:settings_schema.social-media.settings.social_pinterest_visible.label",
+        "default": true
       },
       {
         "type": "text",
@@ -1452,10 +1533,32 @@
         "placeholder": "t:settings_schema.social-media.settings.social_tumblr_link.info"
       },
       {
+        "type": "image_picker",
+        "id": "social_tumblr_icon",
+        "label": "t:settings_schema.social-media.settings.social_tumblr_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_tumblr_visible",
+        "label": "t:settings_schema.social-media.settings.social_tumblr_visible.label",
+        "default": true
+      },
+      {
         "type": "text",
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "social_vimeo_icon",
+        "label": "t:settings_schema.social-media.settings.social_vimeo_icon.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_vimeo_visible",
+        "label": "t:settings_schema.social-media.settings.social_vimeo_visible.label",
+        "default": true
       }
     ]
   },
