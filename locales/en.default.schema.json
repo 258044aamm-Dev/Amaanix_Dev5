@@ -1687,6 +1687,287 @@
         "name": "Multirow"
       }
     },
+    "main-404": {
+      "name": "404 page",
+      "settings": {
+        "desktop_content_position": {
+          "label": "Desktop content position",
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Bottom"
+          }
+        },
+        "content_alignment": {
+          "label": "Content alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
+        "content_width": {
+          "label": "Content width",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          },
+          "options__4": {
+            "label": "Full"
+          }
+        }
+      },
+      "blocks": {
+        "code": {
+          "name": "Code (404 number)",
+          "settings": {
+            "code_text": {
+              "label": "Text"
+            },
+            "text_color": {
+              "label": "Text color"
+            },
+            "font_size": {
+              "label": "Font size"
+            },
+            "font_size_mobile": {
+              "label": "Mobile font size"
+            },
+            "font_weight": {
+              "label": "Font weight",
+              "options__1": {
+                "label": "Normal (400)"
+              },
+              "options__2": {
+                "label": "Medium (500)"
+              },
+              "options__3": {
+                "label": "Semi-bold (600)"
+              },
+              "options__4": {
+                "label": "Bold (700)"
+              },
+              "options__5": {
+                "label": "Extra-bold (800)"
+              },
+              "options__6": {
+                "label": "Black (900)"
+              }
+            },
+            "alignment": {
+              "label": "Alignment"
+            },
+            "horizontal_position": {
+              "label": "Horizontal position"
+            },
+            "margin_top": {
+              "label": "Margin top"
+            },
+            "margin_bottom": {
+              "label": "Margin bottom"
+            }
+          }
+        },
+        "heading": {
+          "name": "Heading",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "text_color": {
+              "label": "Text color"
+            },
+            "font_size": {
+              "label": "Font size"
+            },
+            "font_size_mobile": {
+              "label": "Mobile font size"
+            },
+            "font_weight": {
+              "label": "Font weight",
+              "options__1": {
+                "label": "Normal (400)"
+              },
+              "options__2": {
+                "label": "Medium (500)"
+              },
+              "options__3": {
+                "label": "Semi-bold (600)"
+              },
+              "options__4": {
+                "label": "Bold (700)"
+              },
+              "options__5": {
+                "label": "Extra-bold (800)"
+              },
+              "options__6": {
+                "label": "Black (900)"
+              }
+            },
+            "alignment": {
+              "label": "Alignment"
+            },
+            "horizontal_position": {
+              "label": "Horizontal position"
+            },
+            "margin_top": {
+              "label": "Margin top"
+            },
+            "margin_bottom": {
+              "label": "Margin bottom"
+            }
+          }
+        },
+        "image": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "alt_text": {
+              "label": "Alt text"
+            },
+            "image_width": {
+              "label": "Image width"
+            },
+            "alignment": {
+              "label": "Alignment"
+            },
+            "horizontal_position": {
+              "label": "Horizontal position"
+            },
+            "border_radius": {
+              "label": "Border radius"
+            },
+            "margin_top": {
+              "label": "Margin top"
+            },
+            "margin_bottom": {
+              "label": "Margin bottom"
+            }
+          }
+        },
+        "text": {
+          "name": "Text",
+          "settings": {
+            "text": {
+              "label": "Text"
+            },
+            "text_color": {
+              "label": "Text color"
+            },
+            "font_size": {
+              "label": "Font size"
+            },
+            "font_weight": {
+              "label": "Font weight",
+              "options__1": {
+                "label": "Normal (400)"
+              },
+              "options__2": {
+                "label": "Medium (500)"
+              },
+              "options__3": {
+                "label": "Semi-bold (600)"
+              },
+              "options__4": {
+                "label": "Bold (700)"
+              },
+              "options__5": {
+                "label": "Extra-bold (800)"
+              },
+              "options__6": {
+                "label": "Black (900)"
+              }
+            },
+            "alignment": {
+              "label": "Alignment"
+            },
+            "horizontal_position": {
+              "label": "Horizontal position"
+            },
+            "margin_top": {
+              "label": "Margin top"
+            },
+            "margin_bottom": {
+              "label": "Margin bottom"
+            }
+          }
+        },
+        "button": {
+          "name": "Button",
+          "settings": {
+            "button_label": {
+              "label": "Button label"
+            },
+            "button_link": {
+              "label": "Button link"
+            },
+            "text_color": {
+              "label": "Text color"
+            },
+            "background_color": {
+              "label": "Background color"
+            },
+            "font_size": {
+              "label": "Font size"
+            },
+            "font_weight": {
+              "label": "Font weight",
+              "options__1": {
+                "label": "Normal (400)"
+              },
+              "options__2": {
+                "label": "Medium (500)"
+              },
+              "options__3": {
+                "label": "Semi-bold (600)"
+              },
+              "options__4": {
+                "label": "Bold (700)"
+              },
+              "options__5": {
+                "label": "Extra-bold (800)"
+              },
+              "options__6": {
+                "label": "Black (900)"
+              }
+            },
+            "alignment": {
+              "label": "Alignment"
+            },
+            "horizontal_position": {
+              "label": "Horizontal position"
+            },
+            "outline_button": {
+              "label": "Outline style"
+            },
+            "margin_top": {
+              "label": "Margin top"
+            },
+            "margin_bottom": {
+              "label": "Margin bottom"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "404 page"
+      }
+    },
     "main-account": {
       "name": "Account"
     },

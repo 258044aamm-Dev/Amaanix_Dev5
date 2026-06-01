@@ -1,7 +1,43 @@
 {
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "blocks": {
+        "code": {
+          "type": "code"
+        },
+        "heading": {
+          "type": "heading"
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "image_width": 60,
+            "margin_bottom": 24
+          }
+        },
+        "text": {
+          "type": "text"
+        },
+        "button": {
+          "type": "button"
+        }
+      },
+      "block_order": [
+        "code",
+        "heading",
+        "image",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "content_width": "small",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
