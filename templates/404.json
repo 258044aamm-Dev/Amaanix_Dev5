@@ -1,40 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-404",
       "blocks": {
-        "code": {
-          "type": "code"
-        },
-        "heading": {
-          "type": "heading"
-        },
-        "image": {
-          "type": "image",
+        "code_KjLgcF": {
+          "type": "code",
           "settings": {
-            "image_width": 60,
-            "margin_bottom": 24
+            "code_text": "404",
+            "text_color": "#00999b",
+            "font_size": 120,
+            "font_size_mobile": 80,
+            "font_weight": "700",
+            "alignment": 50,
+            "horizontal_position": 50,
+            "margin_top": 0,
+            "margin_bottom": 12
           }
         },
-        "text": {
-          "type": "text"
+        "heading_TzCcDe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Oops! Page not found",
+            "text_color": "",
+            "font_size": 28,
+            "font_size_mobile": 22,
+            "font_weight": "700",
+            "alignment": 50,
+            "horizontal_position": 50,
+            "margin_top": 0,
+            "margin_bottom": 12
+          }
         },
-        "button": {
-          "type": "button"
+        "text_qHKmmp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sorry, the page you're looking for doesn't exist or has been moved.</p>",
+            "text_color": "#121212",
+            "font_size": 15,
+            "font_weight": "500",
+            "alignment": 50,
+            "horizontal_position": 50,
+            "margin_top": 0,
+            "margin_bottom": 28
+          }
+        },
+        "button_7pTwdD": {
+          "type": "button",
+          "settings": {
+            "button_label": "Back to Home",
+            "button_link": "",
+            "text_color": "",
+            "background_color": "",
+            "font_size": 15,
+            "font_weight": "500",
+            "alignment": 50,
+            "horizontal_position": 50,
+            "outline_button": true,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
         }
       },
       "block_order": [
-        "code",
-        "heading",
-        "image",
-        "text",
-        "button"
+        "code_KjLgcF",
+        "heading_TzCcDe",
+        "text_qHKmmp",
+        "button_7pTwdD"
       ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
         "content_width": "small",
-        "color_scheme": "scheme-1",
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
