@@ -262,8 +262,9 @@
       }
     },
     "404": {
-      "title": "Page not found",
-      "subtext": "404"
+      "title": "Oops! Page not found",
+      "subtext": "Sorry, the page you're looking for doesn't exist or has been moved.",
+      "back_to_home": "Back to Home"
     }
   },
   "sections": {
@@ -273,6 +274,10 @@
       "carousel": "Carousel",
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
+    },
+
+    "main-404": {
+      "name": "404 page"
     },
 
     "header": {

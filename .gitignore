@@ -8,5 +8,10 @@
 ehthumbs.db
 Thumbs.db
 .shopify
+<<<<<<< HEAD
 references/
 docs
+=======
+references
+.kiro
+>>>>>>> origin/Future
