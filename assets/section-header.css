@@ -188,8 +188,8 @@
   position: absolute;
   top: -5px;
   right: -4px;
-  background-color: var(--primary, #00B5B8);
-  color: var(--white, #FFFFFF);
+  background-color: var(--wishlist-badge-bg, var(--primary, #00B5B8));
+  color: var(--wishlist-badge-text, var(--white, #FFFFFF));
   font-size: 10px;
   width: 18px;
   height: 18px;

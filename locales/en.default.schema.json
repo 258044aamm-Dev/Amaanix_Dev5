@@ -1244,6 +1244,56 @@
     },
     "wishlist_drawer": {
       "name": "Wishlist Drawer",
+      "settings": {
+        "colors_header": {
+          "content": "Colors"
+        },
+        "color_drawer_bg": {
+          "label": "Drawer background"
+        },
+        "color_accent": {
+          "label": "Accent color"
+        },
+        "color_heading": {
+          "label": "Heading color"
+        },
+        "color_btn_bg": {
+          "label": "Button background"
+        },
+        "color_btn_text": {
+          "label": "Button text"
+        },
+        "color_badge_bg": {
+          "label": "Badge background"
+        },
+        "color_badge_text": {
+          "label": "Badge text"
+        },
+        "layout_header": {
+          "content": "Layout"
+        },
+        "drawer_position": {
+          "label": "Drawer side",
+          "options__0": {
+            "label": "Left"
+          },
+          "options__1": {
+            "label": "Right"
+          }
+        },
+        "behavior_header": {
+          "content": "Behavior"
+        },
+        "show_guest_prompt": {
+          "label": "Show guest prompt"
+        },
+        "show_summary": {
+          "label": "Show summary"
+        },
+        "enable_quantity": {
+          "label": "Enable quantity"
+        }
+      },
       "presets": {
         "name": "Wishlist Drawer"
       }

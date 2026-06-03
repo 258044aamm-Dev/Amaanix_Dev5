@@ -1,7 +1,39 @@
 {{ 'section-wishlist-drawer.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign color_drawer_bg = section.settings.color_drawer_bg | default: '#FFFFFF'
+  assign color_accent = section.settings.color_accent | default: '#00B5B8'
+  assign color_heading = section.settings.color_heading | default: '#1A1A1A'
+  assign color_btn_bg = section.settings.color_btn_bg | default: '#00B5B8'
+  assign color_btn_text = section.settings.color_btn_text | default: '#FFFFFF'
+  assign color_badge_bg = section.settings.color_badge_bg | default: '#00B5B8'
+  assign color_badge_text = section.settings.color_badge_text | default: '#FFFFFF'
+  assign drawer_position = section.settings.drawer_position | default: 'right'
+  assign show_guest_prompt = section.settings.show_guest_prompt | default: true
+  assign show_summary = section.settings.show_summary | default: true
+  assign enable_quantity = section.settings.enable_quantity | default: true
+-%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --wishlist-drawer-bg: {{ color_drawer_bg }};
+    --wishlist-drawer-accent: {{ color_accent }};
+    --wishlist-drawer-heading: {{ color_heading }};
+    --wishlist-drawer-btn-bg: {{ color_btn_bg }};
+    --wishlist-drawer-btn-text: {{ color_btn_text }};
+  }
+  :root {
+    --wishlist-badge-bg: {{ color_badge_bg }};
+    --wishlist-badge-text: {{ color_badge_text }};
+  }
+</style>
+
 <div class="wishlist-drawer-overlay" id="wishlistDrawerOverlay"></div>
-<div class="wishlist-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-label="{{ 'sections.wishlist_drawer.label' | t }}">
+<div class="wishlist-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-label="{{ 'sections.wishlist_drawer.label' | t }}"
+  data-position="{{ drawer_position }}"
+  data-show-guest-prompt="{{ show_guest_prompt }}"
+  data-show-summary="{{ show_summary }}"
+  data-enable-quantity="{{ enable_quantity }}">
   <div class="wishlist-drawer-header">
     <h3>{{ 'sections.wishlist_drawer.heading' | t }}</h3>
     <button class="wishlist-drawer-close" aria-label="{{ 'sections.wishlist_drawer.close' | t }}">&times;</button>
@@ -21,7 +53,7 @@
         <span class="wishlist-total-price" id="wishlistTotal">$0.00</span>
       </div>
     </div>
-    <div id="wishlistItemsContainer" data-customer="{% if customer %}true{% endif %}"></div>
+    <div id="wishlistItemsContainer" data-customer="{% if customer %}true{% endif %}"{% if customer %} data-wishlist-items='{{ customer.note | url_encode }}'{% endif %}></div>
   </div>
   <div class="wishlist-drawer-footer">
     <button class="wishlist-add-all" id="wishlistAddAllBtn">{{ 'sections.wishlist_drawer.add_all' | t }}</button>
@@ -36,6 +68,96 @@
   "name": "t:sections.wishlist_drawer.name",
   "tag": "section",
   "class": "wishlist-drawer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.wishlist_drawer.settings.colors_header.content"
+    },
+    {
+      "type": "color",
+      "id": "color_drawer_bg",
+      "label": "t:sections.wishlist_drawer.settings.color_drawer_bg.label",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "t:sections.wishlist_drawer.settings.color_accent.label",
+      "default": "#00B5B8"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "t:sections.wishlist_drawer.settings.color_heading.label",
+      "default": "#1A1A1A"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_bg",
+      "label": "t:sections.wishlist_drawer.settings.color_btn_bg.label",
+      "default": "#00B5B8"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_text",
+      "label": "t:sections.wishlist_drawer.settings.color_btn_text.label",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_badge_bg",
+      "label": "t:sections.wishlist_drawer.settings.color_badge_bg.label",
+      "default": "#00B5B8"
+    },
+    {
+      "type": "color",
+      "id": "color_badge_text",
+      "label": "t:sections.wishlist_drawer.settings.color_badge_text.label",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.wishlist_drawer.settings.layout_header.content"
+    },
+    {
+      "type": "select",
+      "id": "drawer_position",
+      "label": "t:sections.wishlist_drawer.settings.drawer_position.label",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.wishlist_drawer.settings.drawer_position.options__0.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.wishlist_drawer.settings.drawer_position.options__1.label"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.wishlist_drawer.settings.behavior_header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_guest_prompt",
+      "label": "t:sections.wishlist_drawer.settings.show_guest_prompt.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "label": "t:sections.wishlist_drawer.settings.show_summary.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quantity",
+      "label": "t:sections.wishlist_drawer.settings.enable_quantity.label",
+      "default": true
+    }
+  ],
   "presets": [
     {
       "name": "t:sections.wishlist_drawer.presets.name"

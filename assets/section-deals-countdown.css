@@ -4,6 +4,14 @@
   padding: 80px 0;
 }
 
+.deals-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .deals-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,6 +39,7 @@
 }
 
 .deals-product-title {
+  font-family: var(--font-heading-family, var(--font-heading, 'Playfair Display', serif));
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -147,13 +156,14 @@
   color: #FFFFFF;
 }
 
+.deals-section .btn:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
 .btn--small {
   padding: 8px 20px;
   font-size: 12px;
-}
-
-.btn--medium {
-  /* Values match .btn base */
 }
 
 .btn--large {

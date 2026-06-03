@@ -96,7 +96,7 @@
             {%- if section.settings.old_price != blank -%}
               <span class="deals-old-price">{{ section.settings.old_price }}</span>
             {%- endif -%}
-            {{ section.settings.new_price }}
+            {{ section.settings.new_price | escape }}
           </div>
           <p>{{ section.settings.description }}</p>
           <div
@@ -141,7 +141,57 @@
   </div>
 </div>
 
-<script src="{{ 'section-deals-countdown.js' | asset_url }}" defer></script>
+<script>
+(function() {
+  var countdownEl = document.getElementById('countdown-{{ section.id }}');
+  if (!countdownEl) return;
+
+  var sectionId = '{{ section.id }}';
+  var daysEl = document.getElementById('days-' + sectionId);
+  var hoursEl = document.getElementById('hours-' + sectionId);
+  var minutesEl = document.getElementById('minutes-' + sectionId);
+  var secondsEl = document.getElementById('seconds-' + sectionId);
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+  var configuredDays = parseInt(countdownEl.getAttribute('data-countdown-days'), 10) || 2;
+  var configuredHours = parseInt(countdownEl.getAttribute('data-countdown-hours'), 10) || 14;
+
+  var storageKey = 'amaanix_deal_end_' + sectionId;
+  var dealEnd = localStorage.getItem(storageKey);
+  if (!dealEnd) {
+    var now = new Date();
+    var end = new Date(now.getTime() + (configuredDays * 24 * 60 * 60 * 1000) + (configuredHours * 60 * 60 * 1000));
+    dealEnd = end.getTime().toString();
+    localStorage.setItem(storageKey, dealEnd);
+  }
+
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var distance = parseInt(dealEnd, 10) - now;
+
+    if (distance <= 0) {
+      daysEl.textContent = '00';
+      hoursEl.textContent = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
+      return;
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.textContent = String(days).padStart(2, '0');
+    hoursEl.textContent = String(hours).padStart(2, '0');
+    minutesEl.textContent = String(minutes).padStart(2, '0');
+    secondsEl.textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+</script>
 
 {% schema %}
 {
@@ -155,30 +205,6 @@
       "type": "image_picker",
       "id": "image",
       "label": "Featured image"
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "Adapt to image"
-        },
-        {
-          "value": "small",
-          "label": "Small"
-        },
-        {
-          "value": "medium",
-          "label": "Medium"
-        },
-        {
-          "value": "large",
-          "label": "Large"
-        }
-      ],
-      "default": "adapt",
-      "label": "Image height"
     },
     {
       "type": "header",
