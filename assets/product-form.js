@@ -62,6 +62,11 @@ if (!customElements.get('product-form')) {
               this.error = true;
               return;
             } else if (!this.cart) {
+              if (window.openCartDrawer) {
+                window.openCartDrawer();
+                if (window.refreshCartDrawer) window.refreshCartDrawer();
+                return;
+              }
               window.location = window.routes.cart_url;
               return;
             }

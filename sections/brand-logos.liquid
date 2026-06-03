@@ -1,0 +1,102 @@
+{{ 'section-brand-logos.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign raw_brands = section.settings.brand_names | newline_to_br | strip_newlines | split: '<br />'
+-%}
+
+<div class="gradient color-{{ section.settings.color_scheme }}">
+  <div class="brand-logos-section section-{{ section.id }}-padding" id="brand-logos-section-{{ section.id }}">
+    <div class="page-width">
+      {%- if raw_brands.size > 0 -%}
+        <div class="logos-marquee">
+          <div class="logos-track">
+            {%- for brand in raw_brands -%}
+              {%- assign trimmed = brand | strip -%}
+              {%- if trimmed != '' -%}
+                <div class="logo-placeholder">{{ trimmed }}</div>
+              {%- endif -%}
+            {%- endfor -%}
+            {%- for brand in raw_brands -%}
+              {%- assign trimmed = brand | strip -%}
+              {%- if trimmed != '' -%}
+                <div class="logo-placeholder">{{ trimmed }}</div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Logos",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Brand Names"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_names",
+      "default": "VOGUE\nFORBES\nWIRED\nELLE DECOR\nGQ",
+      "label": "Brand names",
+      "info": "Enter one brand name per line. Each will appear as a logo placeholder in the marquee."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Logos"
+    }
+  ]
+}
+{% endschema %}

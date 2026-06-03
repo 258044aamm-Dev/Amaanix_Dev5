@@ -556,6 +556,9 @@
         "label": "Image shape"
       }
     },
+    "header_group": {
+      "name": "Header Group"
+    },
     "announcement-bar": {
       "name": "Announcement bar",
       "settings": {
@@ -1221,93 +1224,107 @@
         }
       }
     },
+    "cart_drawer": {
+      "name": "Cart Drawer",
+      "presets": {
+        "name": "Cart Drawer"
+      }
+    },
+    "search_overlay": {
+      "name": "Search Overlay",
+      "settings": {
+        "search_chips": {
+          "label": "Trending search chips",
+          "info": "Comma-separated list of trending search terms"
+        }
+      },
+      "presets": {
+        "name": "Search Overlay"
+      }
+    },
+    "wishlist_drawer": {
+      "name": "Wishlist Drawer",
+      "presets": {
+        "name": "Wishlist Drawer"
+      }
+    },
+    "mobile_menu": {
+      "name": "Mobile Menu",
+      "settings": {
+        "menu": {
+          "label": "Menu"
+        }
+      },
+      "presets": {
+        "name": "Mobile Menu"
+      }
+    },
     "header": {
       "name": "Header",
       "settings": {
-        "logo_help": {
-          "content": "Edit your logo in [theme settings](/editor?context=theme&category=logo)"
+        "logo_header": {
+          "content": "Logo"
         },
-        "logo_position": {
-          "label": "Logo position",
-          "options__1": {
-            "label": "Middle left"
-          },
-          "options__2": {
-            "label": "Top left"
-          },
-          "options__3": {
-            "label": "Top center"
-          },
-          "options__4": {
-            "label": "Middle center"
-          }
+        "logo_image": {
+          "label": "Logo image"
+        },
+        "logo_width": {
+          "label": "Logo width"
+        },
+        "logo_text": {
+          "label": "Logo text"
+        },
+        "colors_header": {
+          "content": "Colors"
+        },
+        "color_bg": {
+          "label": "Background"
+        },
+        "color_text": {
+          "label": "Text"
+        },
+        "color_icon": {
+          "label": "Icons"
+        },
+        "navigation_header": {
+          "content": "Navigation"
         },
         "menu": {
           "label": "Menu"
         },
-        "menu_type_desktop": {
-          "label": "Menu type",
-          "options__1": {
-            "label": "Dropdown"
-          },
-          "options__2": {
-            "label": "Mega menu"
-          },
-          "options__3": {
-            "label": "Drawer"
-          }
+        "layout_header": {
+          "content": "Layout"
+        },
+        "sticky_header": {
+          "label": "Enable sticky header"
+        },
+        "icons_header": {
+          "content": "Icons"
+        },
+        "show_search": {
+          "label": "Show search icon"
+        },
+        "show_wishlist": {
+          "label": "Show wishlist icon"
+        },
+        "show_cart": {
+          "label": "Show cart icon"
+        },
+        "show_profile": {
+          "label": "Show profile icon"
+        },
+        "support_header": {
+          "content": "Support"
         },
         "show_line_separator": {
-          "label": "Separator line"
+          "label": "Show line separator"
         },
-        "header__1": {
-          "content": "Color"
-        },
-        "menu_color_scheme": {
-          "label": "Menu color scheme"
-        },
-        "sticky_header_type": {
-          "label": "Sticky header",
-          "options__1": {
-            "label": "None"
-          },
-          "options__2": {
-            "label": "On scroll up"
-          },
-          "options__3": {
-            "label": "Always"
-          },
-          "options__4": {
-            "label": "Always, reduce logo size"
-          }
-        },
-        "header__utilities": {
-          "content": "Utilities"
-        },
-        "enable_country_selector": {
-          "label": "Country/region selector",
-          "info": "[Manage countries/regions](/admin/settings/markets)"
-        },
-        "enable_language_selector": {
-          "label": "Language selector",
-          "info": "[Manage languages](/admin/settings/languages)"
-        },
-        "margin_bottom": {
-          "label": "Bottom margin"
-        },
-        "mobile_logo_position": {
-          "label": "Mobile logo position",
-          "options__1": {
-            "label": "Center"
-          },
-          "options__2": {
-            "label": "Left"
-          }
-        },
-        "enable_customer_avatar": {
-          "label": "Customer account avatar",
-          "info": "Only visible when customers are signed in with Shop. [Manage customer accounts](/admin/settings/customer_accounts)"
+        "support_url": {
+          "label": "Support page URL"
         }
+      },
+      "presets": {
+        "name": "Header"
       }
     },
     "image-banner": {

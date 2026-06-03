@@ -1,0 +1,362 @@
+{{ 'section-deals-countdown.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- style -%}
+  {% if section.settings.button_background_color != blank -%}
+    #deals-section-{{ section.id }} .btn-primary {
+      background-color: {{ section.settings.button_background_color }};
+      border-color: {{ section.settings.button_background_color }};
+    }
+    #deals-section-{{ section.id }} .btn-outline-dark {
+      border-color: {{ section.settings.button_background_color }};
+    }
+  {%- endif %}
+
+  {% if section.settings.button_text_color != blank -%}
+    #deals-section-{{ section.id }} .btn-primary,
+    #deals-section-{{ section.id }} .btn-outline-dark {
+      color: {{ section.settings.button_text_color }};
+    }
+  {%- endif %}
+
+  {% if section.settings.button_border_radius > 0 -%}
+    #deals-section-{{ section.id }} .btn {
+      border-radius: {{ section.settings.button_border_radius }}px;
+    }
+  {%- endif %}
+
+  {% if section.settings.button_hover_background_color != blank -%}
+    #deals-section-{{ section.id }} .btn-primary:hover {
+      background-color: {{ section.settings.button_hover_background_color }};
+      border-color: {{ section.settings.button_hover_background_color }};
+    }
+    #deals-section-{{ section.id }} .btn-outline-dark:hover {
+      background-color: {{ section.settings.button_hover_background_color }};
+      border-color: {{ section.settings.button_hover_background_color }};
+      color: {% if section.settings.button_text_color != blank %}{{ section.settings.button_text_color }}{% else %}#FFFFFF{% endif %};
+    }
+  {%- endif %}
+{%- endstyle -%}
+
+{%- liquid
+  assign btn_class = 'btn'
+  if section.settings.button_style == 'outline'
+    assign btn_class = btn_class | append: ' btn-outline-dark'
+  else
+    assign btn_class = btn_class | append: ' btn-primary'
+  endif
+  assign btn_class = btn_class | append: ' btn--' | append: section.settings.button_size
+  if section.settings.button_full_width
+    assign btn_class = btn_class | append: ' deals-countdown__button--full-width'
+  endif
+-%}
+
+<div class="gradient color-{{ section.settings.color_scheme }}">
+  <div class="deals-section section-{{ section.id }}-padding" id="deals-section-{{ section.id }}">
+    <div class="container">
+      <div class="deals-grid">
+        <div class="deals-image">
+          {%- if section.settings.image != blank -%}
+            <img
+              loading="lazy"
+              src="{{ section.settings.image | image_url: width: 1200 }}"
+              alt="{{ section.settings.image.alt | escape }}"
+              width="{{ section.settings.image.width }}"
+              height="{{ section.settings.image.height }}"
+              class="full-width object-cover u-border_radius-8px"
+            >
+          {%- else -%}
+            <img
+              loading="lazy"
+              src="{{ 'deal-product-featured.png' | asset_url }}"
+              alt="Deal Product"
+              width="1200"
+              height="600"
+              class="full-width object-cover u-border_radius-8px"
+            >
+          {%- endif -%}
+        </div>
+        <div class="deals-content">
+          <h2>{{ section.settings.heading }}</h2>
+          <h3 class="deals-product-title">{{ section.settings.product_title }}</h3>
+          <div class="deals-price">
+            {%- if section.settings.old_price != blank -%}
+              <span class="deals-old-price">{{ section.settings.old_price }}</span>
+            {%- endif -%}
+            {{ section.settings.new_price }}
+          </div>
+          <p>{{ section.settings.description }}</p>
+          <div
+            class="countdown"
+            id="countdown-{{ section.id }}"
+            data-section-id="{{ section.id }}"
+            data-countdown-days="{{ section.settings.countdown_days }}"
+            data-countdown-hours="{{ section.settings.countdown_hours }}"
+          >
+            <div class="countdown-item">
+              <div class="countdown-number" id="days-{{ section.id }}">02</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="hours-{{ section.id }}">14</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="minutes-{{ section.id }}">33</div>
+              <div class="countdown-label">Mins</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="seconds-{{ section.id }}">07</div>
+              <div class="countdown-label">Secs</div>
+            </div>
+          </div>
+          {%- if section.settings.button_label != blank -%}
+            <a
+              {% if section.settings.button_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.button_link }}"
+              {% endif %}
+              class="{{ btn_class | escape }}"
+            >
+              {{ section.settings.button_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'section-deals-countdown.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Deals Countdown",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Featured image"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "adapt",
+      "label": "Image height"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "🔥 DEAL OF THE WEEK",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "default": "Smart Home Speaker",
+      "label": "Product title"
+    },
+    {
+      "type": "text",
+      "id": "old_price",
+      "default": "$99.00",
+      "label": "Old price (strikethrough)"
+    },
+    {
+      "type": "text",
+      "id": "new_price",
+      "default": "$59.00",
+      "label": "Sale price"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "default": "Voice-controlled assistant with premium sound quality. Limited stock available.",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "GRAB THE DEAL",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary (filled)"
+        },
+        {
+          "value": "outline",
+          "label": "Outline (transparent)"
+        }
+      ],
+      "default": "primary",
+      "label": "Button style"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium",
+      "label": "Button size"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Button hover background color"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 0,
+      "unit": "px",
+      "label": "Button border radius"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width",
+      "default": false,
+      "label": "Full width button"
+    },
+    {
+      "type": "header",
+      "content": "Countdown"
+    },
+    {
+      "type": "range",
+      "id": "countdown_days",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 2,
+      "label": "Countdown days"
+    },
+    {
+      "type": "range",
+      "id": "countdown_hours",
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "default": 14,
+      "label": "Countdown hours"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Deals Countdown"
+    }
+  ]
+}
+{% endschema %}

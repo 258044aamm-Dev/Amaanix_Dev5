@@ -285,6 +285,75 @@
       "announcement_bar": "Announcement bar"
     },
 
+    "announcement-bar": {
+      "name": "Announcement bar",
+      "presets": {
+        "name": "Announcement bar"
+      },
+      "settings": {
+        "auto_rotate": {
+          "label": "Auto-rotate slides"
+        },
+        "change_slides_speed": {
+          "label": "Change slides every"
+        },
+        "show_navigation_arrows": {
+          "label": "Show navigation arrows"
+        },
+        "underline_text": {
+          "label": "Underline text"
+        },
+        "heading_utilities": {
+          "content": "Utilities"
+        },
+        "paragraph": {
+          "content": "Country/region and language selectors will be displayed here."
+        },
+        "show_social": {
+          "label": "Show social icons",
+          "info": "Social icons are set in global theme settings"
+        },
+        "social_heading": {
+          "content": "Social icons"
+        },
+        "social_alignment": {
+          "label": "Social alignment"
+        },
+        "social_gap": {
+          "label": "Social icon gap"
+        },
+        "social_icon_size": {
+          "label": "Social icon size"
+        },
+        "enable_country_selector": {
+          "label": "Enable country/region selector",
+          "info": "Add a country/region selector to allow your customers to browse in other countries/regions."
+        },
+        "enable_language_selector": {
+          "label": "Enable language selector",
+          "info": "Add a language selector to allow your customers to browse the store in other languages."
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Announcement",
+          "settings": {
+            "text": {
+              "default": "Welcome to our store",
+              "label": "Text"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    },
+
+    "announcement_bar": {
+      "close": "Close announcement bar"
+    },
+
     "main-404": {
       "name": "404 page"
     },
@@ -295,8 +364,169 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      },
+      "mobile_toggle_label": "Toggle mobile menu",
+      "search_label": "Search",
+      "cart_title": "Cart",
+      "cart_label": "Cart",
+      "cart_link": "Cart",
+      "wishlist_title": "Wishlist",
+      "wishlist_label": "Wishlist",
+      "about_link": "About",
+      "shop_link": "Shop",
+      "support_link": "Support",
+      "account_link": "My Account",
+      "login_link": "Log In",
+      "register_link": "Sign Up",
+      "logout_link": "Log Out",
+      "name": "Header",
+      "presets": {
+        "name": "Header"
+      },
+      "settings": {
+        "logo_header": {
+          "content": "Logo"
+        },
+        "logo_image": {
+          "label": "Logo image"
+        },
+        "logo_width": {
+          "label": "Logo width"
+        },
+        "logo_text": {
+          "label": "Logo text"
+        },
+        "colors_header": {
+          "content": "Colors"
+        },
+        "color_bg": {
+          "label": "Background"
+        },
+        "color_text": {
+          "label": "Text"
+        },
+        "color_icon": {
+          "label": "Icons"
+        },
+        "navigation_header": {
+          "content": "Navigation"
+        },
+        "menu": {
+          "label": "Menu"
+        },
+        "layout_header": {
+          "content": "Layout"
+        },
+        "sticky_header": {
+          "label": "Enable sticky header"
+        },
+        "icons_header": {
+          "content": "Icons"
+        },
+        "show_search": {
+          "label": "Show search icon"
+        },
+        "show_wishlist": {
+          "label": "Show wishlist icon"
+        },
+        "show_cart": {
+          "label": "Show cart icon"
+        },
+        "show_profile": {
+          "label": "Show profile icon"
+        },
+        "support_header": {
+          "content": "Support"
+        },
+        "support_url": {
+          "label": "Support page URL"
+        },
+        "show_line_separator": {
+          "label": "Show line separator"
+        }
       }
     },
+
+    "cart_drawer": {
+      "label": "Cart drawer",
+      "heading": "Your Cart",
+      "close": "Close cart drawer",
+      "promo_label": "Promo code / Order note",
+      "promo_placeholder": "Enter promo code or note",
+      "promo_apply": "Apply",
+      "empty": "Your cart is empty",
+      "continue_shopping": "Continue shopping",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "shipping_calculated": "Calculated at checkout",
+      "discount": "Discount",
+      "total": "Total",
+      "checkout": "Check Out",
+      "name": "Cart Drawer",
+      "presets": {
+        "name": "Cart Drawer"
+      }
+    },
+
+    "search_overlay": {
+      "label": "Search overlay",
+      "search_placeholder": "Search products...",
+      "clear": "Clear",
+      "trending_searches": "Trending Searches",
+      "settings": {
+        "search_chips": {
+          "label": "Trending search chips",
+          "info": "Comma-separated list of trending search terms"
+        }
+      },
+      "recent_searches": "Recent Searches",
+      "clear_all": "Clear All",
+      "no_results": "No results found.",
+      "browse_collections": "Browse all collections",
+      "searching": "Searching...",
+      "view_all": "View All Results",
+      "name": "Search Overlay",
+      "presets": {
+        "name": "Search Overlay"
+      }
+    },
+
+    "wishlist_drawer": {
+      "label": "Wishlist drawer",
+      "heading": "Your Wishlist",
+      "close": "Close wishlist drawer",
+      "guest_prompt": "Save your wishlist!",
+      "sign_up": "Sign up",
+      "subtotal": "Subtotal",
+      "items": "items",
+      "total": "Total",
+      "add_all": "Add All to Cart",
+      "view_all": "View All Products",
+      "name": "Wishlist Drawer",
+      "presets": {
+        "name": "Wishlist Drawer"
+      }
+    },
+
+    "mobile_menu": {
+      "label": "Mobile menu",
+      "close": "Close mobile menu",
+      "settings": {
+        "menu": {
+          "label": "Menu"
+        }
+      },
+      "shop": "Shop",
+      "about": "About",
+      "support": "Support",
+      "login": "Log In",
+      "register": "Sign Up",
+      "name": "Mobile Menu",
+      "presets": {
+        "name": "Mobile Menu"
+      }
+    },
+
     "cart": {
       "title": "Your cart",
       "caption": "Cart items",

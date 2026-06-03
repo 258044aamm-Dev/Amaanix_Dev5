@@ -1330,3 +1330,36 @@ class CartPerformance {
     );
   }
 }
+
+window.theme = window.theme || {};
+
+window.theme.trapFocus = function(container) {
+  var firstElement = container.querySelector('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  trapFocus(container, firstElement || container);
+  return function() {
+    removeTrapFocus();
+  };
+};
+
+window.theme.showToast = function(message) {
+  var existing = document.querySelector('.theme-toast');
+  if (existing) existing.remove();
+
+  var toast = document.createElement('div');
+  toast.className = 'theme-toast';
+  toast.textContent = message;
+  toast.setAttribute('role', 'alert');
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(function() {
+    toast.classList.add('theme-toast--visible');
+  });
+
+  setTimeout(function() {
+    toast.classList.remove('theme-toast--visible');
+    toast.classList.add('theme-toast--hiding');
+    setTimeout(function() {
+      if (toast.parentNode) toast.remove();
+    }, 300);
+  }, 3000);
+};

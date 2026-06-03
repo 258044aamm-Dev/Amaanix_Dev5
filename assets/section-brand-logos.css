@@ -1,0 +1,57 @@
+.brand-logos-section {
+  padding: 60px 0;
+  background: #ffffff;
+  border-top: 1px solid #e8e8e8;
+}
+
+.logos-marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-track {
+  display: flex;
+  gap: 40px;
+  animation: logosScroll 25s linear infinite;
+  opacity: 0.6;
+  width: max-content;
+  padding: 10px 0;
+}
+
+.logos-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logosScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-placeholder {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ccc;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .logos-marquee {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .logos-marquee::-webkit-scrollbar {
+    display: none;
+  }
+  .logos-track {
+    animation: none;
+    cursor: grab;
+    padding: 10px 20px;
+  }
+  .logos-track:active {
+    cursor: grabbing;
+  }
+}

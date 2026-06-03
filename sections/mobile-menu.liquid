@@ -1,0 +1,67 @@
+{{ 'section-mobile-menu.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign menu_handle = section.settings.menu | default: 'main-menu'
+-%}
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="{{ 'sections.mobile_menu.label' | t }}">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="{{ 'sections.mobile_menu.close' | t }}">✕</button>
+  <ul class="mobile-nav-links">
+    {% if linklists[menu_handle].links.size > 0 %}
+      {% for link in linklists[menu_handle].links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          {% if link.links.size > 0 %}
+            <ul class="mobile-sub-links">
+              {% for child_link in link.links %}
+                <li><a href="{{ child_link.url }}">{{ child_link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    {% else %}
+      <li><a href="{{ routes.all_products_collection_url }}">{{ 'sections.mobile_menu.shop' | t }}</a></li>
+      <li><a href="#brand-story">{{ 'sections.mobile_menu.about' | t }}</a></li>
+      <li><a href="{{ pages['support'].url | default: '/pages/support' }}">{{ 'sections.mobile_menu.support' | t }}</a></li>
+    {% endif %}
+  </ul>
+  <div class="mobile-account-section mb-20 pt-20 border-top">
+    <div class="d-flex gap-10 mb-15">
+      <a href="{{ routes.account_login_url }}" class="btn btn-outline-dark flex-1 p-10 fs-14 text-center">{{ 'sections.mobile_menu.login' | t }}</a>
+      <a href="{{ routes.account_register_url }}" class="btn btn-primary flex-1 p-10 fs-14 text-center">{{ 'sections.mobile_menu.register' | t }}</a>
+    </div>
+  </div>
+  <div class="mobile-social-section mt-auto pt-20 border-top text-center">
+    <div class="d-flex gap-15 justify-center">
+      {% if settings.social_facebook_link != blank %}<a href="{{ settings.social_facebook_link }}" class="social-icon w-36 h-36 fs-14" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>{% endif %}
+      {% if settings.social_instagram_link != blank %}<a href="{{ settings.social_instagram_link }}" class="social-icon w-36 h-36 fs-14" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>{% endif %}
+      {% if settings.social_twitter_link != blank %}<a href="{{ settings.social_twitter_link }}" class="social-icon w-36 h-36 fs-14" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>{% endif %}
+      {% if settings.social_pinterest_link != blank %}<a href="{{ settings.social_pinterest_link }}" class="social-icon w-36 h-36 fs-14" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>{% endif %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'section-mobile-menu.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "t:sections.mobile_menu.name",
+  "tag": "section",
+  "class": "mobile-menu-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:sections.mobile_menu.settings.menu.label",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.mobile_menu.presets.name"
+    }
+  ]
+}
+{% endschema %}

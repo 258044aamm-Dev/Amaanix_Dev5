@@ -1,0 +1,45 @@
+{{ 'section-wishlist-drawer.css' | asset_url | stylesheet_tag }}
+
+<div class="wishlist-drawer-overlay" id="wishlistDrawerOverlay"></div>
+<div class="wishlist-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-label="{{ 'sections.wishlist_drawer.label' | t }}">
+  <div class="wishlist-drawer-header">
+    <h3>{{ 'sections.wishlist_drawer.heading' | t }}</h3>
+    <button class="wishlist-drawer-close" aria-label="{{ 'sections.wishlist_drawer.close' | t }}">&times;</button>
+  </div>
+  <div class="wishlist-drawer-body">
+    <div class="wishlist-guest-prompt" id="wishlistGuestPrompt">
+      <span>{{ 'sections.wishlist_drawer.guest_prompt' | t }} <a href="{{ routes.account_register_url }}">{{ 'sections.wishlist_drawer.sign_up' | t }}</a></span>
+      <button class="close-prompt">&times;</button>
+    </div>
+    <div class="wishlist-summary" id="wishlistSummary">
+      <div class="wishlist-summary-row">
+        <span class="wishlist-total-label">{{ 'sections.wishlist_drawer.subtotal' | t }} (<span id="wishlistItemCount">0</span> {{ 'sections.wishlist_drawer.items' | t }})</span>
+        <span class="wishlist-total-price" id="wishlistSubtotal">$0.00</span>
+      </div>
+      <div class="wishlist-summary-row">
+        <span class="wishlist-total-label">{{ 'sections.wishlist_drawer.total' | t }}</span>
+        <span class="wishlist-total-price" id="wishlistTotal">$0.00</span>
+      </div>
+    </div>
+    <div id="wishlistItemsContainer" data-customer="{% if customer %}true{% endif %}"></div>
+  </div>
+  <div class="wishlist-drawer-footer">
+    <button class="wishlist-add-all" id="wishlistAddAllBtn">{{ 'sections.wishlist_drawer.add_all' | t }}</button>
+    <a href="{{ routes.all_products_collection_url }}" class="btn btn-outline-dark full-width-btn">{{ 'sections.wishlist_drawer.view_all' | t }}</a>
+  </div>
+</div>
+
+<script src="{{ 'section-wishlist-drawer.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "t:sections.wishlist_drawer.name",
+  "tag": "section",
+  "class": "wishlist-drawer-section",
+  "presets": [
+    {
+      "name": "t:sections.wishlist_drawer.presets.name"
+    }
+  ]
+}
+{% endschema %}

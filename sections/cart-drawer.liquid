@@ -1,1 +1,61 @@
-{%- render 'cart-drawer' -%}
+{{ 'section-cart-drawer.css' | asset_url | stylesheet_tag }}
+
+<div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+<div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="{{ 'sections.cart_drawer.label' | t }}">
+  <div class="cart-drawer-header">
+    <h3>{{ 'sections.cart_drawer.heading' | t }}</h3>
+    <button class="cart-drawer-close" aria-label="{{ 'sections.cart_drawer.close' | t }}">&times;</button>
+  </div>
+  <div class="cart-drawer-body" id="cartDrawerBody">
+    <div class="cart-promo">
+      <div class="cart-promo-label">{{ 'sections.cart_drawer.promo_label' | t }}</div>
+      <div class="cart-promo-row">
+        <input type="text" class="cart-promo-input" id="cartPromoInput" placeholder="{{ 'sections.cart_drawer.promo_placeholder' | t }}" aria-label="{{ 'sections.cart_drawer.promo_label' | t }}">
+        <button class="cart-promo-apply" id="cartPromoApply">{{ 'sections.cart_drawer.promo_apply' | t }}</button>
+      </div>
+      <div class="cart-promo-msg" id="cartPromoMsg"></div>
+    </div>
+    <div class="cart-empty-message" id="cartEmptyMessage">
+      <p>{{ 'sections.cart_drawer.empty' | t }}</p>
+      <a href="{{ routes.all_products_collection_url }}">{{ 'sections.cart_drawer.continue_shopping' | t }}</a>
+    </div>
+    <div id="cartItemsContainer"></div>
+  </div>
+  <div class="cart-drawer-footer">
+    <div id="cartSummary">
+      <div class="cart-summary-row">
+        <span class="cart-total-label">{{ 'sections.cart_drawer.subtotal' | t }}</span>
+        <span class="cart-total-price" id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-row cart-shipping-row" id="cartShippingRow">
+        <span class="cart-total-label">{{ 'sections.cart_drawer.shipping' | t }}</span>
+        <span class="cart-total-price" id="cartShipping">{{ 'sections.cart_drawer.shipping_calculated' | t }}</span>
+      </div>
+      <div class="cart-summary-row cart-discount-row" id="cartDiscountRow">
+        <span class="cart-total-label">{{ 'sections.cart_drawer.discount' | t }}</span>
+        <span class="cart-discount-value" id="cartDiscountValue">&minus;$0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span class="cart-total-label">{{ 'sections.cart_drawer.total' | t }}</span>
+        <span class="cart-total-price" id="cartTotal">$0.00</span>
+      </div>
+    </div>
+    <button class="cart-checkout-btn" id="cartCheckoutBtn">{{ 'sections.cart_drawer.checkout' | t }}</button>
+    <a href="{{ routes.all_products_collection_url }}" class="cart-continue-link">{{ 'sections.cart_drawer.continue_shopping' | t }}</a>
+  </div>
+</div>
+
+<script src="{{ 'section-cart-drawer.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "t:sections.cart_drawer.name",
+  "tag": "section",
+  "class": "cart-drawer-section",
+  "presets": [
+    {
+      "name": "t:sections.cart_drawer.presets.name"
+    }
+  ]
+}
+{% endschema %}

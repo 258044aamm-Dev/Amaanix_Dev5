@@ -1,0 +1,66 @@
+{{ 'section-search-overlay.css' | asset_url | stylesheet_tag }}
+
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="{{ 'sections.search_overlay.label' | t }}">
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <label for="searchInput" class="sr-only">{{ 'sections.search_overlay.search_placeholder' | t }}</label>
+      <input type="text" class="search-input" id="searchInput" placeholder="{{ 'sections.search_overlay.search_placeholder' | t }}" autocomplete="off">
+      <button class="search-icon-btn" id="searchSubmit">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="search-clear-btn" id="searchClear">{{ 'sections.search_overlay.clear' | t }}</button>
+    </div>
+    <div class="search-placeholder-rotator" id="searchPlaceholder"></div>
+    <div class="search-suggestions" id="searchSuggestions">
+      <span class="search-label">{{ 'sections.search_overlay.trending_searches' | t }}</span>
+      <div class="search-chips">
+        {%- assign search_chips = section.settings.search_chips | default: 'watches,earbuds,desk organizer,wellness kit,eco living' | split: ',' -%}
+        {%- for chip in search_chips -%}
+          {%- assign chip_query = chip | strip -%}
+          <span class="search-chip" data-query="{{ chip_query }}">{{ chip_query }}</span>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="search-recent" id="searchRecent">
+      <div class="d-flex justify-between items-center">
+        <span class="search-label">{{ 'sections.search_overlay.recent_searches' | t }}</span>
+        <span class="clear-recent-link" id="clearRecent">{{ 'sections.search_overlay.clear_all' | t }}</span>
+      </div>
+      <ul class="search-recent-list" id="recentList"></ul>
+    </div>
+    <div class="search-results-preview" id="searchResults" style="display: none;"></div>
+    <div class="no-results-message" id="noResults" style="display: none;">
+      <strong>{{ 'sections.search_overlay.no_results' | t }}</strong><br>
+      <a href="{{ routes.all_products_collection_url }}" class="link-primary">{{ 'sections.search_overlay.browse_collections' | t }}</a>
+    </div>
+    <div class="search-loading" id="searchLoading" style="display: none;">
+      <div class="search-spinner"></div>
+      <span>{{ 'sections.search_overlay.searching' | t }}</span>
+    </div>
+    <a href="{{ routes.search_url }}" class="view-all-results" id="viewAllResults">{{ 'sections.search_overlay.view_all' | t }} →</a>
+  </div>
+</div>
+
+<script src="{{ 'section-search-overlay.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "t:sections.search_overlay.name",
+  "tag": "section",
+  "class": "search-overlay-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "search_chips",
+      "label": "t:sections.search_overlay.settings.search_chips.label",
+      "info": "t:sections.search_overlay.settings.search_chips.info",
+      "default": "watches,earbuds,desk organizer,wellness kit,eco living"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.search_overlay.presets.name"
+    }
+  ]
+}
+{% endschema %}
