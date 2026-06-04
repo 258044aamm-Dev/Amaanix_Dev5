@@ -1,61 +1,101 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "type": "header",
-    "name": "t:sections.header_group.name",
-    "sections": {
-        "announcement-bar": {
-            "type": "announcement-bar",
-            "blocks": {
-                "announcement-bar-0": {
-                    "type": "announcement",
-                    "settings": {
-                        "text": "Welcome to our store",
-                        "link": ""
-                    }
-                }
-            },
-            "block_order": [
-                "announcement-bar-0"
-            ]
-        },
-        "header": {
-            "type": "header",
-            "settings": {
-                "color_scheme": "scheme-1",
-                "logo_position": "middle-left",
-                "menu": "main-menu",
-                "sticky_header_type": "on-scroll-up",
-                "show_line_separator": true,
-                "enable_country_selector": true,
-                "enable_language_selector": true,
-                "mobile_logo_position": "center",
-                "margin_bottom": 0,
-                "padding_top": 20,
-                "padding_bottom": 20
-            }
-        },
-        "search-overlay": {
-            "type": "search-overlay",
-            "settings": {}
-        },
-        "wishlist-drawer": {
-            "type": "wishlist-drawer",
-            "settings": {}
-        },
-        "cart-drawer": {
-            "type": "cart-drawer",
-            "settings": {}
-        },
-        "mobile-menu": {
-            "type": "mobile-menu",
-            "settings": {}
+  "type": "header",
+  "name": "t:sections.header_group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "🎁10% Welcome Discount",
+            "link": "#"
+          }
         }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_navigation_arrows": true,
+        "underline_text": false,
+        "color_scheme": "",
+        "show_line_separator": true,
+        "show_social": false,
+        "social_alignment": 100,
+        "social_gap": 10,
+        "social_icon_size": 22,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
     },
-    "order": [
-        "announcement-bar",
-        "header",
-        "search-overlay",
-        "wishlist-drawer",
-        "cart-drawer",
-        "mobile-menu"
-    ]
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_width": 150,
+        "logo_text": "Amaanix",
+        "color_bg": "#ffffff",
+        "color_text": "#1a202c",
+        "color_icon": "#1a202c",
+        "menu": "main-menu",
+        "sticky_header": true,
+        "show_search": true,
+        "show_wishlist": true,
+        "show_cart": true,
+        "show_profile": true,
+        "support_url": ""
+      }
+    },
+    "search-overlay": {
+      "type": "search-overlay",
+      "settings": {
+        "search_chips": "watches,earbuds,desk organizer,wellness kit,eco living"
+      }
+    },
+    "wishlist-drawer": {
+      "type": "wishlist-drawer",
+      "settings": {
+        "color_drawer_bg": "#ffffff",
+        "color_accent": "#00b5b8",
+        "color_heading": "#1a1a1a",
+        "color_btn_bg": "#00b5b8",
+        "color_btn_text": "#ffffff",
+        "color_badge_bg": "#00b5b8",
+        "color_badge_text": "#ffffff",
+        "drawer_position": "right",
+        "show_guest_prompt": true,
+        "show_summary": true,
+        "enable_quantity": true
+      }
+    },
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {}
+    },
+    "mobile-menu": {
+      "type": "mobile-menu",
+      "settings": {
+        "menu": "main-menu"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "search-overlay",
+    "wishlist-drawer",
+    "cart-drawer",
+    "mobile-menu"
+  ]
 }
