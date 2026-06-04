@@ -15,52 +15,47 @@
 {%- endstyle -%}
 
 {%- style -%}
-  {% if section.settings.button_background_color != blank -%}
-    #deals-section-{{ section.id }} .btn-primary {
-      background-color: {{ section.settings.button_background_color }};
-      border-color: {{ section.settings.button_background_color }};
-    }
-    #deals-section-{{ section.id }} .btn-outline-dark {
-      border-color: {{ section.settings.button_background_color }};
-    }
-  {%- endif %}
-
-  {% if section.settings.button_text_color != blank -%}
-    #deals-section-{{ section.id }} .btn-primary,
-    #deals-section-{{ section.id }} .btn-outline-dark {
-      color: {{ section.settings.button_text_color }};
-    }
-  {%- endif %}
-
   {% if section.settings.button_border_radius > 0 -%}
-    #deals-section-{{ section.id }} .btn {
+    #deals-section-{{ section.id }} .button {
       border-radius: {{ section.settings.button_border_radius }}px;
     }
   {%- endif %}
-
-  {% if section.settings.button_hover_background_color != blank -%}
-    #deals-section-{{ section.id }} .btn-primary:hover {
-      background-color: {{ section.settings.button_hover_background_color }};
-      border-color: {{ section.settings.button_hover_background_color }};
-    }
-    #deals-section-{{ section.id }} .btn-outline-dark:hover {
-      background-color: {{ section.settings.button_hover_background_color }};
-      border-color: {{ section.settings.button_hover_background_color }};
-      color: {% if section.settings.button_text_color != blank %}{{ section.settings.button_text_color }}{% else %}#FFFFFF{% endif %};
-    }
-  {%- endif %}
+  #deals-section-{{ section.id }} .button[aria-disabled="true"],
+  #deals-section-{{ section.id }} .button:disabled {
+    opacity: 1;
+    cursor: pointer;
+  }
+  #deals-section-{{ section.id }} {
+    --color-foreground: 255, 255, 255;
+    --color-secondary-button: 255, 255, 255;
+    --color-secondary-button-text: 255, 255, 255;
+  }
+  #deals-section-{{ section.id }} .button--secondary {
+    --alpha-button-background: 0;
+  }
+  #deals-section-{{ section.id }} .button--primary {
+    --color-button: 0, 181, 184;
+    --color-button-text: 255, 255, 255;
+    transition: transform 0.3s ease, box-shadow var(--duration-short) ease;
+  }
+  #deals-section-{{ section.id }} .button--primary:not([disabled]):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 181, 184, 0.35);
+  }
 {%- endstyle -%}
 
 {%- liquid
-  assign btn_class = 'btn'
+  assign btn_class = 'button'
   if section.settings.button_style == 'outline'
-    assign btn_class = btn_class | append: ' btn-outline-dark'
+    assign btn_class = btn_class | append: ' button--secondary'
   else
-    assign btn_class = btn_class | append: ' btn-primary'
+    assign btn_class = btn_class | append: ' button--primary'
   endif
-  assign btn_class = btn_class | append: ' btn--' | append: section.settings.button_size
+  if section.settings.button_size == 'small'
+    assign btn_class = btn_class | append: ' button--small'
+  endif
   if section.settings.button_full_width
-    assign btn_class = btn_class | append: ' deals-countdown__button--full-width'
+    assign btn_class = btn_class | append: ' button--full-width'
   endif
 -%}
 
@@ -76,7 +71,6 @@
               alt="{{ section.settings.image.alt | escape }}"
               width="{{ section.settings.image.width }}"
               height="{{ section.settings.image.height }}"
-              class="full-width object-cover u-border_radius-8px"
             >
           {%- else -%}
             <img
@@ -85,20 +79,19 @@
               alt="Deal Product"
               width="1200"
               height="600"
-              class="full-width object-cover u-border_radius-8px"
             >
           {%- endif -%}
         </div>
         <div class="deals-content">
           <h2>{{ section.settings.heading }}</h2>
-          <h3 class="deals-product-title">{{ section.settings.product_title }}</h3>
+          <h3 class="deals-product-title">{{ section.settings.product_title | escape }}</h3>
           <div class="deals-price">
             {%- if section.settings.old_price != blank -%}
-              <span class="deals-old-price">{{ section.settings.old_price }}</span>
+              <span class="deals-old-price">{{ section.settings.old_price | escape }}</span>
             {%- endif -%}
             {{ section.settings.new_price | escape }}
           </div>
-          <p>{{ section.settings.description }}</p>
+          <p>{{ section.settings.description | escape }}</p>
           <div
             class="countdown"
             id="countdown-{{ section.id }}"
@@ -189,7 +182,15 @@
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  var intervalId = setInterval(updateCountdown, 1000);
+
+  if (window.Shopify && Shopify.designMode) {
+    document.addEventListener('shopify:section:unload', function(event) {
+      if (event.detail && event.detail.sectionId === sectionId) {
+        clearInterval(intervalId);
+      }
+    });
+  }
 })();
 </script>
 
@@ -276,35 +277,16 @@
       "id": "button_size",
       "options": [
         {
+          "value": "default",
+          "label": "Default"
+        },
+        {
           "value": "small",
           "label": "Small"
-        },
-        {
-          "value": "medium",
-          "label": "Medium"
-        },
-        {
-          "value": "large",
-          "label": "Large"
         }
       ],
-      "default": "medium",
+      "default": "default",
       "label": "Button size"
-    },
-    {
-      "type": "color",
-      "id": "button_background_color",
-      "label": "Button background color"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text color"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_background_color",
-      "label": "Button hover background color"
     },
     {
       "type": "range",
