@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_UkRe9z": {
+          "type": "announcement",
+          "settings": {
+            "text": "🚚Free Shipping on Orders $100+",
+            "link": "#"
+          }
+        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
@@ -23,6 +30,7 @@
         }
       },
       "block_order": [
+        "announcement_UkRe9z",
         "announcement-bar-0"
       ],
       "settings": {
