@@ -191,7 +191,47 @@
       }
     },
     "testimonials": {
-      "type": "testimonials"
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-0": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "5",
+            "quote": "\"The quality of products from Amaanix is unmatched. I've redecorated my entire home office with their items and couldn't be happier.\"",
+            "verified_label": "Verified Buyer",
+            "author_name": "Sarah Jenkins"
+          }
+        },
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "5",
+            "quote": "\"Fast shipping and excellent customer service. The eco-friendly products are exactly what I was looking for. Highly recommend!\"",
+            "verified_label": "Verified Buyer",
+            "author_name": "Michael Chen"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "stars": "4.5",
+            "quote": "\"Love the aesthetic and functionality. The kitchen tools are beautiful and durable. Will definitely be shopping here again.\"",
+            "verified_label": "Verified Buyer",
+            "author_name": "Emily Rodriguez"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-0",
+        "testimonial-1",
+        "testimonial-2"
+      ],
+      "settings": {
+        "heading": "WHAT OUR CUSTOMERS SAY",
+        "subheading": "Real experiences from real people \u2014 trust speaks for itself",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
