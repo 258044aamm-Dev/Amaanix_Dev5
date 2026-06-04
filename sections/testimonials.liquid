@@ -1,0 +1,65 @@
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="section-padding" id="testimonials-section">
+  <div class="container">
+    <div class="testimonials-header">
+      <h2>WHAT OUR CUSTOMERS SAY</h2>
+      <p>Real experiences from real people — trust speaks for itself</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+        <p class="testimonial-text">"The quality of products from Amaanix is unmatched. I've redecorated my entire home office with their items and couldn't be happier."</p>
+        <div class="testimonial-author">
+          <img loading="lazy" src="{{ 'avatar-sarah-jenkins.png' | asset_url }}" alt="Sarah Jenkins" class="author-avatar" width="60" height="60">
+          <div class="author-info">
+            <h5>Sarah Jenkins</h5>
+            <div class="verified-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+        <p class="testimonial-text">"Fast shipping and excellent customer service. The eco-friendly products are exactly what I was looking for. Highly recommend!"</p>
+        <div class="testimonial-author">
+          <img loading="lazy" src="{{ 'brand-story-hero.png' | asset_url }}" alt="Michael Chen" class="author-avatar" width="60" height="60">
+          <div class="author-info">
+            <h5>Michael Chen</h5>
+            <div class="verified-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars" aria-label="4.5 out of 5 stars">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+        </div>
+        <p class="testimonial-text">"Love the aesthetic and functionality. The kitchen tools are beautiful and durable. Will definitely be shopping here again."</p>
+        <div class="testimonial-author">
+          <img loading="lazy" src="{{ 'product-03-hover.png' | asset_url }}" alt="Emily Rodriguez" class="author-avatar" width="60" height="60">
+          <div class="author-info">
+            <h5>Emily Rodriguez</h5>
+            <div class="verified-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Verified Buyer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'section-testimonials.js' | asset_url | script_tag }}
