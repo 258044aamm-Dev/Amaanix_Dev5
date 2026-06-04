@@ -115,6 +115,17 @@
         "padding_bottom": 36
       }
     },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {
+        "subheading": "About Amaanix",
+        "heading": "Built on Trust. Driven by Discipline.",
+        "content": "<p>Amaanix is built to make online shopping <strong style=\"color: #00B5B8;\">simple</strong>, <strong style=\"font-weight: 600;\">seamless</strong>, and <strong style=\"color: #00B5B8;\">reliable</strong>.</p><p>We focus on delivering thoughtfully selected products with a strong commitment to <strong style=\"color: #014C52;\">quality and trust</strong>.</p><p>In a short time, we've earned the confidence of <strong style=\"font-weight: 600;\">thousands of customers</strong> across the United States by keeping everything clear, consistent, and customer-first.</p><p>&ldquo;Amaanix understands what you need&mdash;and delivers it with care.&rdquo;</p>",
+        "button_label": "SHOP NOW",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "deals_countdown": {
       "type": "deals-countdown",
       "settings": {
@@ -187,6 +198,7 @@
     "image_banner",
     "rich_text",
     "featured_collection",
+    "brand_story",
     "deals_countdown",
     "brand_logos",
     "testimonials",
