@@ -120,8 +120,9 @@
       "settings": {
         "subheading": "About Amaanix",
         "heading": "Built on Trust. Driven by Discipline.",
-        "content": "<p>Amaanix is built to make online shopping <strong style=\"color: #00B5B8;\">simple</strong>, <strong style=\"font-weight: 600;\">seamless</strong>, and <strong style=\"color: #00B5B8;\">reliable</strong>.</p><p>We focus on delivering thoughtfully selected products with a strong commitment to <strong style=\"color: #014C52;\">quality and trust</strong>.</p><p>In a short time, we've earned the confidence of <strong style=\"font-weight: 600;\">thousands of customers</strong> across the United States by keeping everything clear, consistent, and customer-first.</p><p>&ldquo;Amaanix understands what you need&mdash;and delivers it with care.&rdquo;</p>",
+        "content": "<p>Amaanix is built to make online shopping <strong style=\"color: #00B5B8;\">simple</strong>, <strong style=\"font-weight: 600;\">seamless</strong>, and <strong style=\"color: #00B5B8;\">reliable</strong>.</p><p>We focus on delivering thoughtfully selected products with a strong commitment to <strong style=\"color: #014C52;\">quality and trust</strong>.</p><p>In a short time, we've earned the confidence of <strong style=\"font-weight: 600;\">thousands of customers</strong> across the United States by keeping everything clear, consistent, and customer-first.</p><p>“Amaanix understands what you need—and delivers it with care.”</p>",
         "button_label": "SHOP NOW",
+        "button_link": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -136,6 +137,10 @@
         "description": "Voice-controlled assistant with premium sound quality. Limited stock available.",
         "button_label": "GRAB THE DEAL",
         "button_link": "",
+        "button_style": "primary",
+        "button_size": "default",
+        "button_border_radius": 0,
+        "button_full_width": false,
         "countdown_days": 2,
         "countdown_hours": 14,
         "color_scheme": "scheme-1",
@@ -148,46 +153,8 @@
       "settings": {
         "color_scheme": "scheme-1",
         "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "brand_names": "VOGUE\nFORBES\nWIRED\nELLE DECOR\nGQ"
       }
     },
     "testimonials": {
@@ -228,7 +195,7 @@
       ],
       "settings": {
         "heading": "WHAT OUR CUSTOMERS SAY",
-        "subheading": "Real experiences from real people \u2014 trust speaks for itself",
+        "subheading": "Real experiences from real people — trust speaks for itself",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -241,7 +208,6 @@
     "brand_story",
     "deals_countdown",
     "brand_logos",
-    "testimonials",
-    "collage"
+    "testimonials"
   ]
 }
