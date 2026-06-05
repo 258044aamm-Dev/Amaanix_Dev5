@@ -148,6 +148,49 @@
         "padding_bottom": 36
       }
     },
+    "blog_posts": {
+      "type": "blog-posts",
+      "blocks": {
+        "article-0": {
+          "type": "article",
+          "settings": {
+            "category": "Productivity",
+            "title": "10 Office Products That Boost Focus &amp; Productivity",
+            "excerpt": "Discover the essential tools that can transform your workspace and enhance your daily workflow...",
+            "date": "June 15, 2025",
+            "article_link": "#"
+          }
+        },
+        "article-1": {
+          "type": "article",
+          "settings": {
+            "category": "Eco Living",
+            "title": "Why Eco-Friendly Home Products Matter in 2025",
+            "excerpt": "Learn about the impact of sustainable choices and how small changes can make a big difference...",
+            "date": "June 10, 2025",
+            "article_link": "#"
+          }
+        },
+        "article-2": {
+          "type": "article",
+          "settings": {
+            "category": "Wellness",
+            "title": "The Amaanix Guide to Kitchen Organization",
+            "excerpt": "Tips and tricks to keep your kitchen tidy, functional, and inspiring for your culinary adventures...",
+            "date": "June 05, 2025",
+            "article_link": "#"
+          }
+        }
+      },
+      "block_order": ["article-0", "article-1", "article-2"],
+      "settings": {
+        "heading": "FROM THE AMAANIX JOURNAL",
+        "subheading": "Insights, guides &amp; inspiration for a focused life",
+        "button_label": "VIEW ALL POSTS",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -157,7 +200,8 @@
             "stars": "5",
             "quote": "\"The quality of products from Amaanix is unmatched. I've redecorated my entire home office with their items and couldn't be happier.\"",
             "verified_label": "Verified Buyer",
-            "author_name": "Sarah Jenkins"
+            "author_name": "Sarah Jenkins",
+            "link": "#"
           }
         },
         "testimonial-1": {
@@ -166,7 +210,8 @@
             "stars": "5",
             "quote": "\"Fast shipping and excellent customer service. The eco-friendly products are exactly what I was looking for. Highly recommend!\"",
             "verified_label": "Verified Buyer",
-            "author_name": "Michael Chen"
+            "author_name": "Michael Chen",
+            "link": "#"
           }
         },
         "testimonial-2": {
@@ -175,7 +220,8 @@
             "stars": "4.5",
             "quote": "\"Love the aesthetic and functionality. The kitchen tools are beautiful and durable. Will definitely be shopping here again.\"",
             "verified_label": "Verified Buyer",
-            "author_name": "Emily Rodriguez"
+            "author_name": "Emily Rodriguez",
+            "link": "#"
           }
         }
       },
@@ -208,6 +254,7 @@
     "brand_story",
     "deals_countdown",
     "testimonials",
+    "blog_posts",
     "brand_logos"
   ]
 }

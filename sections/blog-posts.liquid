@@ -1,0 +1,212 @@
+{{ 'section-blog-posts.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="blog-posts-section section-{{ section.id }}-padding" id="blog-posts-section-{{ section.id }}">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+    <div class="blog-grid">
+      {%- for block in section.blocks -%}
+        <div class="blog-card" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <img loading="lazy" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" class="blog-image" width="800" height="500">
+          {%- else -%}
+            <img loading="lazy" src="{{ 'blog-post-01-hero.png' | asset_url }}" alt="{{ block.settings.title | escape }}" class="blog-image" width="800" height="500">
+          {%- endif -%}
+          <div class="blog-content">
+            <span class="blog-category">{{ block.settings.category }}</span>
+            <h3 class="blog-title">{{ block.settings.title }}</h3>
+            <p class="blog-excerpt">{{ block.settings.excerpt }}</p>
+            <div class="blog-meta">{{ block.settings.date }}</div>
+            <a
+              {% if block.settings.article_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ block.settings.article_link }}"
+              {% endif %}
+              class="read-more"
+            >
+              READ MORE <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="blog-posts-btn-wrapper">
+      {%- if section.settings.button_label != blank -%}
+        <a
+          {% if section.settings.button_link == blank %}
+            href="#"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+          class="btn-outline-dark"
+        >
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog Posts",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "default": "Productivity",
+          "label": "Category"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "10 Office Products That Boost Focus &amp; Productivity",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "excerpt",
+          "default": "Discover the essential tools that can transform your workspace and enhance your daily workflow...",
+          "label": "Excerpt"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "default": "June 15, 2025",
+          "label": "Date"
+        },
+        {
+          "type": "url",
+          "id": "article_link",
+          "label": "Article link"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "FROM THE AMAANIX JOURNAL",
+      "label": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "default": "Insights, guides &amp; inspiration for a focused life",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "VIEW ALL POSTS",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "label": "Padding top"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "label": "Padding bottom"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Posts",
+      "blocks": [
+        {
+          "type": "article",
+          "settings": {
+            "category": "Productivity",
+            "title": "10 Office Products That Boost Focus &amp; Productivity",
+            "excerpt": "Discover the essential tools that can transform your workspace and enhance your daily workflow...",
+            "date": "June 15, 2025",
+            "article_link": "#"
+          }
+        },
+        {
+          "type": "article",
+          "settings": {
+            "category": "Eco Living",
+            "title": "Why Eco-Friendly Home Products Matter in 2025",
+            "excerpt": "Learn about the impact of sustainable choices and how small changes can make a big difference...",
+            "date": "June 10, 2025",
+            "article_link": "#"
+          }
+        },
+        {
+          "type": "article",
+          "settings": {
+            "category": "Wellness",
+            "title": "The Amaanix Guide to Kitchen Organization",
+            "excerpt": "Tips and tricks to keep your kitchen tidy, functional, and inspiring for your culinary adventures...",
+            "date": "June 05, 2025",
+            "article_link": "#"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

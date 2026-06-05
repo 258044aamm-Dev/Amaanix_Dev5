@@ -25,7 +25,15 @@
     {%- endif -%}
     <div class="testimonials-grid">
       {%- for block in section.blocks -%}
-        <div class="testimonial-card" {{ block.shopify_attributes }}>
+        <a
+          {% if block.settings.link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ block.settings.link }}"
+          {% endif %}
+          class="testimonial-card"
+          {{ block.shopify_attributes }}
+        >
           <div class="testimonial-stars" aria-label="{{ block.settings.stars }} out of 5 stars">
             {%- if block.settings.stars == '4.5' -%}
               <i class="fas fa-star" aria-hidden="true"></i>
@@ -53,7 +61,7 @@
               <div class="verified-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> {{ block.settings.verified_label }}</div>
             </div>
           </div>
-        </div>
+        </a>
       {%- endfor -%}
     </div>
   </div>
@@ -61,7 +69,9 @@
 
 <script>
 (function() {
-  var section = document.getElementById('testimonials-section-{{ section.id }}');
+  var scriptTag = document.currentScript;
+  if (!scriptTag) return;
+  var section = scriptTag.previousElementSibling;
   if (!section) return;
   var cards = section.querySelectorAll('.testimonial-card');
   if (cards.length === 0) return;
@@ -168,6 +178,11 @@
           "id": "author_name",
           "default": "Sarah Jenkins",
           "label": "Author name"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Card link"
         }
       ]
     }
@@ -182,7 +197,8 @@
             "stars": "5",
             "quote": "\"The quality of products from Amaanix is unmatched. I've redecorated my entire home office with their items and couldn't be happier.\"",
             "verified_label": "Verified Buyer",
-            "author_name": "Sarah Jenkins"
+            "author_name": "Sarah Jenkins",
+            "link": "#"
           }
         },
         {
@@ -191,7 +207,8 @@
             "stars": "5",
             "quote": "\"Fast shipping and excellent customer service. The eco-friendly products are exactly what I was looking for. Highly recommend!\"",
             "verified_label": "Verified Buyer",
-            "author_name": "Michael Chen"
+            "author_name": "Michael Chen",
+            "link": "#"
           }
         },
         {
@@ -200,7 +217,8 @@
             "stars": "4.5",
             "quote": "\"Love the aesthetic and functionality. The kitchen tools are beautiful and durable. Will definitely be shopping here again.\"",
             "verified_label": "Verified Buyer",
-            "author_name": "Emily Rodriguez"
+            "author_name": "Emily Rodriguez",
+            "link": "#"
           }
         }
       ]
