@@ -86,35 +86,6 @@
         "padding_bottom": 0
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_overlay_on_hover": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
     "brand_story": {
       "type": "brand-story",
       "settings": {
@@ -150,49 +121,12 @@
     },
     "featured_products": {
       "type": "featured-products",
-      "settings": {}
-    },
-    "blog_posts": {
-      "type": "blog-posts",
-      "blocks": {
-        "article-0": {
-          "type": "article",
-          "settings": {
-            "category": "Productivity",
-            "title": "10 Office Products That Boost Focus &amp; Productivity",
-            "excerpt": "Discover the essential tools that can transform your workspace and enhance your daily workflow...",
-            "date": "June 15, 2025",
-            "article_link": "#"
-          }
-        },
-        "article-1": {
-          "type": "article",
-          "settings": {
-            "category": "Eco Living",
-            "title": "Why Eco-Friendly Home Products Matter in 2025",
-            "excerpt": "Learn about the impact of sustainable choices and how small changes can make a big difference...",
-            "date": "June 10, 2025",
-            "article_link": "#"
-          }
-        },
-        "article-2": {
-          "type": "article",
-          "settings": {
-            "category": "Wellness",
-            "title": "The Amaanix Guide to Kitchen Organization",
-            "excerpt": "Tips and tricks to keep your kitchen tidy, functional, and inspiring for your culinary adventures...",
-            "date": "June 05, 2025",
-            "article_link": "#"
-          }
-        }
-      },
-      "block_order": ["article-0", "article-1", "article-2"],
       "settings": {
-        "heading": "FROM THE AMAANIX JOURNAL",
-        "subheading": "Insights, guides &amp; inspiration for a focused life",
-        "button_label": "VIEW ALL POSTS",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "FEATURED PRODUCTS",
+        "subheading": "Curated essentials designed for every part of your day",
+        "collection": "",
+        "products": [],
+        "limit": 4
       }
     },
     "testimonials": {
@@ -241,6 +175,54 @@
         "padding_bottom": 36
       }
     },
+    "blog_posts": {
+      "type": "blog-posts",
+      "blocks": {
+        "article-0": {
+          "type": "article",
+          "settings": {
+            "category": "Productivity",
+            "title": "10 Office Products That Boost Focus &amp; Productivity",
+            "excerpt": "Discover the essential tools that can transform your workspace and enhance your daily workflow...",
+            "date": "June 15, 2025",
+            "article_link": "#"
+          }
+        },
+        "article-1": {
+          "type": "article",
+          "settings": {
+            "category": "Eco Living",
+            "title": "Why Eco-Friendly Home Products Matter in 2025",
+            "excerpt": "Learn about the impact of sustainable choices and how small changes can make a big difference...",
+            "date": "June 10, 2025",
+            "article_link": "#"
+          }
+        },
+        "article-2": {
+          "type": "article",
+          "settings": {
+            "category": "Wellness",
+            "title": "The Amaanix Guide to Kitchen Organization",
+            "excerpt": "Tips and tricks to keep your kitchen tidy, functional, and inspiring for your culinary adventures...",
+            "date": "June 05, 2025",
+            "article_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "article-0",
+        "article-1",
+        "article-2"
+      ],
+      "settings": {
+        "heading": "FROM THE AMAANIX JOURNAL",
+        "subheading": "Insights, guides &amp; inspiration for a focused life",
+        "button_label": "VIEW ALL POSTS",
+        "button_link": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "brand_logos": {
       "type": "brand-logos",
       "settings": {
@@ -254,10 +236,9 @@
   "order": [
     "image_banner",
     "rich_text",
-    "featured_collection",
+    "featured_products",
     "brand_story",
     "deals_countdown",
-    "featured_products",
     "testimonials",
     "blog_posts",
     "brand_logos"
