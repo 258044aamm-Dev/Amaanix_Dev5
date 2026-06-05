@@ -30,6 +30,7 @@
   width: 100%;
   height: 100%;
   transform: scale(1);
+  background: rgba(0,0,0,0.7);
 }
 
 .hero-banner .slide.active .slide-bg {
