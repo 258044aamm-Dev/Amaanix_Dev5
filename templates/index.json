@@ -9,52 +9,64 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide-0": {
+          "type": "slide",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "tagline": "Life Deserves Better.",
+            "heading": "Where Focus Meets Freedom",
+            "text": "Crafted with integrity for the spaces where you live, work, and thrive.",
+            "button_primary_text": "SHOP NOW",
+            "button_primary_link": "#",
+            "button_secondary_text": "EXPLORE",
+            "button_secondary_link": "#"
           }
         },
-        "text": {
-          "type": "text",
+        "slide-1": {
+          "type": "slide",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "tagline": "The Standard Has a Name.",
+            "heading": "Discover the Amaanix Standard",
+            "text": "Thoughtfully curated essentials for every dimension of modern living.",
+            "button_primary_text": "EXPLORE",
+            "button_primary_link": "#",
+            "button_secondary_text": "OUR STORY",
+            "button_secondary_link": "#"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide-2": {
+          "type": "slide",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "tagline": "Built Different.",
+            "heading": "Introducing Our Latest Collection",
+            "text": "Each piece selected with purpose. Every detail refined for excellence.",
+            "button_primary_text": "SHOP NOW",
+            "button_primary_link": "#",
+            "button_secondary_text": "SIGN UP",
+            "button_secondary_link": "#"
+          }
+        },
+        "slide-3": {
+          "type": "slide",
+          "settings": {
+            "tagline": "Do More. Be More.",
+            "heading": "Conscious Living, Elevated",
+            "text": "Sustainable design that honors both your values and your aesthetic.",
+            "button_primary_text": "DISCOVER ECO",
+            "button_primary_link": "#",
+            "button_secondary_text": "OUR MISSION",
+            "button_secondary_link": "#"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-3",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
-      }
+        "slide-0",
+        "slide-1",
+        "slide-2",
+        "slide-3"
+      ]
     },
     "rich_text": {
       "type": "rich-text",
@@ -239,7 +251,7 @@
     }
   },
   "order": [
-    "image_banner",
+    "hero",
     "rich_text",
     "featured_products",
     "brand_story",

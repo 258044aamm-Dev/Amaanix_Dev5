@@ -1,0 +1,168 @@
+{% if section.blocks.size > 0 %}
+  {{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+  {% assign origins = "tl,tr,bl,br,center" | split: "," %}
+  <section class="hero-banner" id="hero-{{ section.id }}" role="region" aria-roledescription="carousel" aria-label="Hero banner" aria-live="polite">
+    {% for block in section.blocks %}
+      {% assign origin_idx = forloop.index0 | modulo: 5 %}
+      <div class="slide{% if forloop.first %} active{% endif %}" {{ block.shopify_attributes }}>
+        <div class="slide-bg slide-bg--origin-{{ origins[origin_idx] }}">
+          {% assign default_images = "hero-01.jpg,hero-01.jpg,hero-03.jpg,blog-post-02-hero.png" | split: "," %}
+          {% assign fallback_idx = forloop.index0 | modulo: default_images.size %}
+          <img src="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1920 }}{% else %}{{ default_images[fallback_idx] | asset_url }}{% endif %}" alt="" aria-hidden="true" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}" width="1920" height="1080">
+        </div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          {% if block.settings.tagline != blank %}
+            <div class="slide-tagline">{{ block.settings.tagline }}</div>
+          {% endif %}
+          {% if block.settings.heading != blank %}
+            {% if forloop.first %}
+              <h1>{{ block.settings.heading }}</h1>
+            {% else %}
+              <h2>{{ block.settings.heading }}</h2>
+            {% endif %}
+          {% endif %}
+          {% if block.settings.text != blank %}
+            <p>{{ block.settings.text }}</p>
+          {% endif %}
+          {% if block.settings.button_primary_text != blank or block.settings.button_secondary_text != blank %}
+            <div class="slide-buttons">
+              {% if block.settings.button_primary_text != blank %}
+                <a href="{% if block.settings.button_primary_link != blank %}{{ block.settings.button_primary_link }}{% else %}#{% endif %}" class="btn btn-primary">{{ block.settings.button_primary_text }}</a>
+              {% endif %}
+              {% if block.settings.button_secondary_text != blank %}
+                <a href="{% if block.settings.button_secondary_link != blank %}{{ block.settings.button_secondary_link }}{% else %}#{% endif %}" class="btn btn-outline">{{ block.settings.button_secondary_text }}</a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+    <div class="hero-nav">
+      {% for block in section.blocks %}
+        <button type="button" class="hero-dot{% if forloop.first %} active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Slide {{ forloop.index }}"></button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <script src="{{ 'section-hero.js' | asset_url }}" defer></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "default": "Life Deserves Better.",
+          "label": "Tagline"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Where Focus Meets Freedom",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Crafted with integrity for the spaces where you live, work, and thrive.",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Primary button"
+        },
+        {
+          "type": "text",
+          "id": "button_primary_text",
+          "default": "SHOP NOW",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_primary_link",
+          "label": "Button link"
+        },
+        {
+          "type": "header",
+          "content": "Secondary button"
+        },
+        {
+          "type": "text",
+          "id": "button_secondary_text",
+          "default": "EXPLORE",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_secondary_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "Life Deserves Better.",
+            "heading": "Where Focus Meets Freedom",
+            "text": "Crafted with integrity for the spaces where you live, work, and thrive.",
+            "button_primary_text": "SHOP NOW",
+            "button_secondary_text": "EXPLORE"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "The Standard Has a Name.",
+            "heading": "Discover the Amaanix Standard",
+            "text": "Thoughtfully curated essentials for every dimension of modern living.",
+            "button_primary_text": "EXPLORE",
+            "button_secondary_text": "OUR STORY"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "Built Different.",
+            "heading": "Introducing Our Latest Collection",
+            "text": "Each piece selected with purpose. Every detail refined for excellence.",
+            "button_primary_text": "SHOP NOW",
+            "button_secondary_text": "SIGN UP"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "tagline": "Do More. Be More.",
+            "heading": "Conscious Living, Elevated",
+            "text": "Sustainable design that honors both your values and your aesthetic.",
+            "button_primary_text": "DISCOVER ECO",
+            "button_secondary_text": "OUR MISSION"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
