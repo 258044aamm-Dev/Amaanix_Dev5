@@ -9,7 +9,6 @@
  */
 {
   "sections": {
-<<<<<<< HEAD
     "hero": {
       "type": "hero",
       "blocks": {
@@ -69,8 +68,6 @@
         "slide-3"
       ]
     },
-=======
->>>>>>> 22eaf20a841d5182c4ef7012b2b1a1ffebe23e33
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -254,10 +251,7 @@
     }
   },
   "order": [
-<<<<<<< HEAD
     "hero",
-=======
->>>>>>> 22eaf20a841d5182c4ef7012b2b1a1ffebe23e33
     "rich_text",
     "featured_products",
     "brand_story",
