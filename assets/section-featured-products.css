@@ -1,0 +1,180 @@
+.featured-products-section {
+  padding: 80px 0;
+}
+
+.featured-products-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.featured-products-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.featured-products-section .section-header h2 {
+  font-family: var(--font-heading-family, 'Playfair Display', serif);
+  font-size: 36px;
+  color: #1A1A1A;
+  margin-bottom: 10px;
+}
+
+.featured-products-section .section-header p {
+  font-family: var(--font-body-family, 'Proza Libre', sans-serif);
+  font-size: 16px;
+  color: #666666;
+}
+
+.featured-products-section .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.featured-products-section .product-card {
+  border-radius: var(--radius, 8px);
+  overflow: hidden;
+  transition: opacity 0.5s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.featured-products-section .product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featured-products-section .product-card.visible:hover {
+  transform: translateY(-4px);
+}
+
+.featured-products-section .product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--bg-light, #F8F9FA);
+  border-radius: var(--radius, 8px);
+}
+
+.featured-products-section .product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.featured-products-section .product-image-main {
+  z-index: 1;
+}
+
+.featured-products-section .product-image-hover {
+  z-index: 2;
+  opacity: 0;
+}
+
+.featured-products-section .product-card:hover .product-image-main {
+  opacity: 0;
+}
+
+.featured-products-section .product-card:hover .product-image-hover {
+  opacity: 1;
+}
+
+.featured-products-section .product-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.05) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.featured-products-section .product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.featured-products-section .product-overlay-name {
+  font-family: var(--font-heading-family, 'Playfair Display', serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white, #FFFFFF);
+  margin-bottom: 8px;
+  transform: translateY(12px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.featured-products-section .product-card:hover .product-overlay-name {
+  transform: translateY(0);
+}
+
+.featured-products-section .product-overlay-cta {
+  font-family: var(--font-body-family, 'Poppins', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--white, #FFFFFF);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease 0.1s, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.featured-products-section .product-overlay-cta i {
+  font-size: 11px;
+  transition: transform 0.3s ease;
+}
+
+.featured-products-section .product-card:hover .product-overlay-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featured-products-section .product-card:hover .product-overlay-cta i {
+  transform: translateX(4px);
+}
+
+.featured-products-section .product-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.featured-products-section .product-link:hover {
+  color: inherit;
+}
+
+.featured-products-section .product-link:focus-visible {
+  outline: 2px solid var(--primary, #00B5B8);
+  outline-offset: 2px;
+  border-radius: var(--radius, 8px);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .featured-products-section .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-products-section {
+    padding: 40px 0;
+  }
+  .featured-products-section .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}

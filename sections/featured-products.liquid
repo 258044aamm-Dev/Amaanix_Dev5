@@ -1,0 +1,121 @@
+{{ 'section-featured-products.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign title = section.settings.title | default: "FEATURED PRODUCTS"
+  assign subheading = section.settings.subheading | default: "Curated essentials designed for every part of your day"
+  assign products_limit = section.settings.limit | default: 4
+  assign products_to_show = blank
+  assign fallback_url = '/collections/all'
+
+  if section.settings.products != blank
+    assign products_to_show = section.settings.products
+  elsif section.settings.collection != blank
+    assign products_to_show = section.settings.collection.products
+  endif
+
+  if collections.all.products.size > 0
+    assign fallback_url = collections.all.products.first.url
+  endif
+-%}
+
+<section class="featured-products-section" id="featured-products-{{ section.id }}">
+  <div class="container">
+    <div class="section-header">
+      <h2>{{ title | escape }}</h2>
+      <p>{{ subheading | escape }}</p>
+    </div>
+    <div class="product-grid">
+      {%- if products_to_show != blank and products_to_show.size > 0 -%}
+        {%- for product in products_to_show limit: products_limit -%}
+          {%- if product == blank -%}{%- continue -%}{%- endif -%}
+          <div class="product-card" data-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-price="{{ product.price | money_without_currency }}">
+            <a href="{{ product.url }}" class="product-link">
+            <div class="product-image-wrapper">
+              {%- if product.featured_image != blank -%}
+                <img loading="lazy" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" class="product-image product-image-main" width="600" height="600">
+                {%- if product.images[1] != blank -%}
+                  <img loading="lazy" src="{{ product.images[1] | image_url: width: 600 }}" alt="{{ product.title | escape }}" class="product-image product-image-hover" width="600" height="600">
+                {%- else -%}
+                  <img loading="lazy" src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.title | escape }}" class="product-image product-image-hover" width="600" height="600">
+                {%- endif -%}
+              {%- else -%}
+                {%- assign prod_image_idx = forloop.index0 | modulo: 6 | plus: 1 -%}{{ 'product-' | append: prod_image_idx | placeholder_svg_tag: 'product-image' }}
+              {%- endif -%}
+              <div class="product-overlay">
+                <h3 class="product-overlay-name">{{ product.title | escape }}</h3>
+                <span class="product-overlay-cta">Browse <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+            </a>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..products_limit) -%}
+          {%- assign placeholder_index = i | minus: 1 | modulo: 6 | plus: 1 -%}
+          {%- assign placeholder_image = 'product-' | append: placeholder_index -%}
+          <div class="product-card" data-id="placeholder-{{ i }}" data-name="Placeholder Product {{ i }}">
+            <a href="{{ fallback_url }}" class="product-link">
+            <div class="product-image-wrapper">
+              {{ placeholder_image | placeholder_svg_tag: 'product-image' }}
+              <div class="product-overlay">
+                <h3 class="product-overlay-name">Placeholder Product {{ i }}</h3>
+                <span class="product-overlay-cta">Browse <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+              </div>
+            </div>
+            </a>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'section-featured-products.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "FEATURED PRODUCTS"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Curated essentials designed for every part of your day"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Or Select Products Directly",
+      "limit": 8
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "label": "Number of products to show",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

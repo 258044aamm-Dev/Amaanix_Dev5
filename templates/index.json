@@ -148,6 +148,10 @@
         "padding_bottom": 36
       }
     },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {}
+    },
     "blog_posts": {
       "type": "blog-posts",
       "blocks": {
@@ -253,6 +257,7 @@
     "featured_collection",
     "brand_story",
     "deals_countdown",
+    "featured_products",
     "testimonials",
     "blog_posts",
     "brand_logos"
